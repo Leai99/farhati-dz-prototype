@@ -1,0 +1,273 @@
+{
+  "common": {
+    "appName": "Farhati DZ",
+    "back": "Back",
+    "currency": "DA",
+    "admin": "Admin",
+    "startNow": "Get started",
+    "removeFromFavorites": "Remove from favorites",
+    "saveToFavorites": "Save to favorites",
+    "bottomNav": {
+      "home": "Home",
+      "explore": "Explore",
+      "myEvent": "My Event",
+      "notifications": "Notifications",
+      "profile": "Profile"
+    }
+  },
+  "splash": {
+    "tagline": "Your Algerian platform for organizing every kind of event, all in one place",
+    "cta": "Tap to continue"
+  },
+  "onboarding": {
+    "title": "Plan your event with confidence",
+    "body": "From idea to celebration, Farhati DZ brings together the best service providers in one place"
+  },
+  "login": {
+    "signInTitle": "Welcome back",
+    "signUpTitle": "Create your account",
+    "signInSubtitle": "Sign in to keep organizing your event",
+    "signUpSubtitle": "Join Farhati DZ and start organizing your event",
+    "fullNameLabel": "Full name",
+    "fullNamePlaceholder": "Enter your full name",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "Enter your email address",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "signInCta": "Sign in",
+    "signUpCta": "Create account",
+    "toggleToSignUp": "Don't have an account? Create one",
+    "toggleToSignIn": "Already have an account? Sign in",
+    "errors": {
+      "fullNameRequired": "Full name is required",
+      "emailRequired": "Email address is required",
+      "emailInvalid": "Enter a valid email address",
+      "passwordRequired": "Password is required",
+      "passwordTooShort": "Password must be at least 6 characters"
+    }
+  },
+  "accountType": {
+    "title": "How would you like to use Farhati DZ?",
+    "subtitle": "Choose your account type to continue",
+    "customer": { "title": "Customer", "description": "I'm looking for services for my event" },
+    "provider": { "title": "Service Provider", "description": "I offer services for events" }
+  },
+  "home": {
+    "greeting": "Welcome to Farhati DZ",
+    "subtitle": "Let's start planning your next event",
+    "favoritesAria": "Favorites",
+    "eventCard": {
+      "title": "Start your next event",
+      "body": "Choose your event type and start planning step by step"
+    }
+  },
+  "eventType": {
+    "title": "Choose your event type",
+    "subtitle": "We'll show you the best suggestions based on your choice",
+    "types": {
+      "wedding": "Wedding",
+      "birthday": "Birthday",
+      "graduation": "Graduation",
+      "corporate": "Corporate Event",
+      "other": "Other"
+    }
+  },
+  "explore": {
+    "searchPlaceholder": "Search for a service or provider",
+    "filterAria": "Filter results",
+    "allCategories": "All categories",
+    "empty": {
+      "title": "No matching results",
+      "description": "Try adjusting your filters or search terms",
+      "reset": "Reset filters"
+    }
+  },
+  "filters": {
+    "dialogAria": "Filters",
+    "title": "Filter results",
+    "closeAria": "Close",
+    "categoryHeading": "Category",
+    "maxPriceHeading": "Max price: {{price}} {{currency}}",
+    "maxPriceAria": "Maximum price",
+    "minRatingHeading": "Minimum rating",
+    "starAria": "{{count}} stars and up",
+    "reset": "Reset",
+    "apply": "Apply filters"
+  },
+  "categories": {
+    "title": "All categories",
+    "subtitle": "Choose a category to see related services"
+  },
+  "serviceDetails": {
+    "notFoundTitle": "This service could not be found",
+    "notFoundBody": "It may have been removed, or the link is incorrect",
+    "priceRange": "Price range",
+    "about": "About this service",
+    "save": "Save to favorites",
+    "saved": "Saved to favorites",
+    "viewProvider": "View provider profile",
+    "reviewsCount_one": "{{count}} review",
+    "reviewsCount_other": "{{count}} reviews"
+  },
+  "providerProfile": {
+    "notFound": "This provider could not be found",
+    "about": "About",
+    "otherServices": "Services from this provider"
+  },
+  "favorites": {
+    "title": "Favorites",
+    "empty": {
+      "title": "You haven't saved any service yet",
+      "description": "Explore available services and save the ones you like to come back to later",
+      "cta": "Explore services"
+    }
+  },
+  "myEvent": {
+    "title": "My Event",
+    "empty": {
+      "title": "You haven't added any service to your event yet",
+      "description": "Explore available services and start building your event, one service at a time",
+      "cta": "Explore services"
+    },
+    "servicesAdded_one": "{{count}} service added",
+    "servicesAdded_other": "{{count}} services added",
+    "estimatedBudget": "Estimated budget"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "empty": {
+      "title": "No notifications yet",
+      "description": "The latest updates about your event and requests will appear here"
+    }
+  },
+  "profile": {
+    "languageHeading": "Language",
+    "notificationsToggle": "Enable notifications",
+    "logout": "Log out"
+  },
+  "mockData": {
+    "currentUser": { "name": "Yasmine Bouzid", "title": "Member of Farhati DZ" },
+    "categories": {
+      "venues": { "label": "Venues & Event Halls" },
+      "photography": { "label": "Photography" },
+      "decor": { "label": "Decor & Styling" },
+      "catering": { "label": "Catering & Hospitality" },
+      "music": { "label": "Music & Entertainment" },
+      "invitations": { "label": "Invitations & Gifts" },
+      "beauty": { "label": "Beauty & Styling" },
+      "planning": { "label": "Event Planning" }
+    },
+    "services": {
+      "s1": {
+        "name": "Al-Andalus Event Hall",
+        "location": "Algiers",
+        "description": "A spacious, modern hall that accommodates events of every size, with professional reception service and ample parking. Our team supports you from initial planning through the event itself for a seamless experience with nothing overlooked."
+      },
+      "s2": {
+        "name": "Lamsa Photography Studio",
+        "location": "Oran",
+        "description": "We capture your moments in an elegant documentary style that blends the natural with the professional. We work with modern equipment and an experienced team to document your event from multiple angles, delivering edited photos within two weeks."
+      },
+      "s3": {
+        "name": "Al-Amal Decor",
+        "location": "Constantine",
+        "description": "We design and set up custom decor that reflects the character of your event, from lighting to flowers and side arrangements. We work with all kinds of spaces and suggest solutions that fit your budget and the space available."
+      },
+      "s4": {
+        "name": "Al-Asala Catering",
+        "location": "Algiers",
+        "description": "Varied menus that blend traditional Algerian dishes with modern touches, customizable to guest count and taste. Our service team handles every detail from preparation to serving."
+      },
+      "s5": {
+        "name": "Al-Nagham Band",
+        "location": "Annaba",
+        "description": "A versatile band suited to all kinds of events, from calm atmospheres to lively evenings. We also provide professional sound equipment sized to your venue."
+      },
+      "s6": {
+        "name": "Elegant Invitations Boutique",
+        "location": "Oran",
+        "description": "Printed and digital invitation designs with elegant, fully customizable touches, with the option to add matching keepsake gifts. Fast delivery to fit any timeline."
+      },
+      "s7": {
+        "name": "Lamasat Beauty Salon",
+        "location": "Blida",
+        "description": "Complete beauty and grooming services including makeup and hairstyling by a team trained in the latest techniques. We also offer trial sessions before the event."
+      },
+      "s8": {
+        "name": "Al-Nokhba Event Planning",
+        "location": "Algiers",
+        "description": "We handle your event from A to Z — choosing the venue, coordinating with service providers, and managing the schedule on the day itself. Our team is with you every step of the way for peace of mind."
+      },
+      "s9": {
+        "name": "Al-Nour Conference Hall",
+        "location": "Sétif",
+        "description": "A hall equipped with the latest sound and display systems, suited to conferences and professional events of any size. We also offer hospitality and seating arrangement on request."
+      },
+      "s10": {
+        "name": "Golden Frame Studio",
+        "location": "Constantine",
+        "description": "Professional photo sessions in a cinematic style that highlights the finest details of your event. We also offer printing and custom albums after delivery."
+      },
+      "s11": {
+        "name": "Day-of Event Coordination",
+        "location": "Algiers",
+        "description": "Day-of coordination for those who've planned their own event and need a professional team to execute it smoothly. We liaise with all your service providers and manage the schedule through to the end of the event."
+      },
+      "s12": {
+        "name": "Event Videography",
+        "location": "Oran",
+        "description": "Full video coverage of your event with professional editing that brings together the best moments in a short film. An unedited extended version is also available on request."
+      }
+    },
+    "providers": {
+      "p1": {
+        "name": "Al-Andalus Event Hall",
+        "bio": "We welcome all kinds of events in our fully equipped hall, backed by more than ten years of experience organizing events of every size."
+      },
+      "p2": {
+        "name": "Lamsa Photography Studio",
+        "bio": "A professional photo studio documenting your events in both photo and video, with a specialized team and an elegant visual style suited to every taste."
+      },
+      "p3": {
+        "name": "Al-Amal Decor",
+        "bio": "An interior design team specialized in styling event spaces, from lighting to floral arrangements, with a custom touch for every client."
+      },
+      "p4": {
+        "name": "Al-Asala Catering",
+        "bio": "A restaurant specialized in event catering, with varied menus that blend Algerian tradition and a modern touch."
+      },
+      "p5": {
+        "name": "Al-Nagham Band",
+        "bio": "A music band with extensive experience performing at all kinds of events, with professional sound equipment and a style suited to every audience."
+      },
+      "p6": {
+        "name": "Elegant Invitations Boutique",
+        "bio": "A design studio specialized in printed and digital invitations, with fully customizable designs suited to the character of every event."
+      },
+      "p7": {
+        "name": "Lamasat Beauty Salon",
+        "bio": "A beauty salon specialized in event preparation, with a team trained in the latest makeup and hairstyling techniques."
+      },
+      "p8": {
+        "name": "Al-Nokhba Event Planning",
+        "bio": "A full-service event planning company handling every detail of your event from planning to execution — or managing just the day itself if you prefer to plan it yourself."
+      },
+      "p9": {
+        "name": "Al-Nour Conference Hall",
+        "bio": "A hall equipped with the latest technical systems, dedicated to conferences and professional events of every size."
+      },
+      "p10": {
+        "name": "Golden Frame Studio",
+        "bio": "A photo studio with a cinematic style, specialized in capturing the finest details of your event in high quality."
+      }
+    },
+    "notifications": {
+      "n1": { "title": "Your booking with \"Al-Andalus Event Hall\" has been confirmed", "time": "2 hours ago" },
+      "n2": { "title": "New message from \"Lamsa Photography Studio\" about your session appointment", "time": "5 hours ago" },
+      "n3": { "title": "Reminder: your event is coming up in 10 days", "time": "Yesterday" },
+      "n4": { "title": "Your booking request has been received and is awaiting the provider's response", "time": "2 days ago" },
+      "n5": { "title": "New message from \"Al-Nokhba Event Planning\"", "time": "A week ago" },
+      "n6": { "title": "An update to the cancellation and refund policy", "time": "Two weeks ago" }
+    }
+  }
+}

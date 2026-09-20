@@ -1,0 +1,273 @@
+{
+  "common": {
+    "appName": "Farhati DZ",
+    "back": "Retour",
+    "currency": "DA",
+    "admin": "Admin",
+    "startNow": "Commencer",
+    "removeFromFavorites": "Retirer des favoris",
+    "saveToFavorites": "Ajouter aux favoris",
+    "bottomNav": {
+      "home": "Accueil",
+      "explore": "Explorer",
+      "myEvent": "Mon événement",
+      "notifications": "Notifications",
+      "profile": "Profil"
+    }
+  },
+  "splash": {
+    "tagline": "Votre plateforme algérienne pour organiser tous vos événements, en un seul endroit",
+    "cta": "Appuyez pour continuer"
+  },
+  "onboarding": {
+    "title": "Organisez votre événement en toute confiance",
+    "body": "De l'idée à la célébration, Farhati DZ réunit pour vous les meilleurs prestataires en un seul endroit"
+  },
+  "login": {
+    "signInTitle": "Bon retour parmi nous",
+    "signUpTitle": "Créez votre compte",
+    "signInSubtitle": "Connectez-vous pour continuer à organiser votre événement",
+    "signUpSubtitle": "Rejoignez Farhati DZ et commencez à organiser votre événement",
+    "fullNameLabel": "Nom complet",
+    "fullNamePlaceholder": "Entrez votre nom complet",
+    "emailLabel": "Adresse e-mail",
+    "emailPlaceholder": "Entrez votre adresse e-mail",
+    "passwordLabel": "Mot de passe",
+    "passwordPlaceholder": "Entrez votre mot de passe",
+    "signInCta": "Se connecter",
+    "signUpCta": "Créer le compte",
+    "toggleToSignUp": "Vous n'avez pas de compte ? Créez-en un",
+    "toggleToSignIn": "Vous avez déjà un compte ? Connectez-vous",
+    "errors": {
+      "fullNameRequired": "Le nom complet est requis",
+      "emailRequired": "L'adresse e-mail est requise",
+      "emailInvalid": "Le format de l'adresse e-mail est invalide",
+      "passwordRequired": "Le mot de passe est requis",
+      "passwordTooShort": "Le mot de passe doit contenir au moins 6 caractères"
+    }
+  },
+  "accountType": {
+    "title": "Comment souhaitez-vous utiliser Farhati DZ ?",
+    "subtitle": "Choisissez votre type de compte pour continuer",
+    "customer": { "title": "Client", "description": "Je cherche des prestataires pour mon événement" },
+    "provider": { "title": "Prestataire de services", "description": "Je propose des services pour événements" }
+  },
+  "home": {
+    "greeting": "Bienvenue sur Farhati DZ",
+    "subtitle": "Commençons à organiser votre prochain événement",
+    "favoritesAria": "Favoris",
+    "eventCard": {
+      "title": "Démarrez votre prochain événement",
+      "body": "Choisissez le type de votre événement et planifiez étape par étape"
+    }
+  },
+  "eventType": {
+    "title": "Choisissez le type de votre événement",
+    "subtitle": "Nous vous montrerons les meilleures suggestions selon votre choix",
+    "types": {
+      "wedding": "Mariage",
+      "birthday": "Anniversaire",
+      "graduation": "Remise de diplôme",
+      "corporate": "Événement professionnel",
+      "other": "Autre"
+    }
+  },
+  "explore": {
+    "searchPlaceholder": "Rechercher un service ou un prestataire",
+    "filterAria": "Filtrer les résultats",
+    "allCategories": "Toutes les catégories",
+    "empty": {
+      "title": "Aucun résultat correspondant",
+      "description": "Essayez de modifier vos filtres ou vos termes de recherche",
+      "reset": "Réinitialiser les filtres"
+    }
+  },
+  "filters": {
+    "dialogAria": "Filtres",
+    "title": "Filtrer les résultats",
+    "closeAria": "Fermer",
+    "categoryHeading": "Catégorie",
+    "maxPriceHeading": "Prix maximum : {{price}} {{currency}}",
+    "maxPriceAria": "Prix maximum",
+    "minRatingHeading": "Note minimale",
+    "starAria": "{{count}} étoiles et plus",
+    "reset": "Réinitialiser",
+    "apply": "Appliquer les filtres"
+  },
+  "categories": {
+    "title": "Toutes les catégories",
+    "subtitle": "Choisissez une catégorie pour voir les services associés"
+  },
+  "serviceDetails": {
+    "notFoundTitle": "Ce service est introuvable",
+    "notFoundBody": "Il a peut-être été supprimé, ou le lien est incorrect",
+    "priceRange": "Fourchette de prix",
+    "about": "À propos de ce service",
+    "save": "Ajouter aux favoris",
+    "saved": "Ajouté aux favoris",
+    "viewProvider": "Voir le profil du prestataire",
+    "reviewsCount_one": "{{count}} avis",
+    "reviewsCount_other": "{{count}} avis"
+  },
+  "providerProfile": {
+    "notFound": "Ce prestataire est introuvable",
+    "about": "À propos",
+    "otherServices": "Services de ce prestataire"
+  },
+  "favorites": {
+    "title": "Favoris",
+    "empty": {
+      "title": "Vous n'avez encore enregistré aucun service",
+      "description": "Découvrez les services disponibles et enregistrez ceux qui vous plaisent pour y revenir plus tard",
+      "cta": "Découvrir les services"
+    }
+  },
+  "myEvent": {
+    "title": "Mon événement",
+    "empty": {
+      "title": "Vous n'avez encore ajouté aucun service à votre événement",
+      "description": "Découvrez les services disponibles et construisez votre événement, service après service",
+      "cta": "Découvrir les services"
+    },
+    "servicesAdded_one": "{{count}} service ajouté",
+    "servicesAdded_other": "{{count}} services ajoutés",
+    "estimatedBudget": "Budget estimé"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "empty": {
+      "title": "Aucune notification pour le moment",
+      "description": "Les dernières mises à jour concernant votre événement et vos demandes apparaîtront ici"
+    }
+  },
+  "profile": {
+    "languageHeading": "Langue",
+    "notificationsToggle": "Activer les notifications",
+    "logout": "Déconnexion"
+  },
+  "mockData": {
+    "currentUser": { "name": "Yasmine Bouzid", "title": "Membre de Farhati DZ" },
+    "categories": {
+      "venues": { "label": "Salles de fêtes et réceptions" },
+      "photography": { "label": "Photographie" },
+      "decor": { "label": "Décoration et agencement" },
+      "catering": { "label": "Traiteur et restauration" },
+      "music": { "label": "Musique et animation" },
+      "invitations": { "label": "Faire-part et cadeaux" },
+      "beauty": { "label": "Beauté et style" },
+      "planning": { "label": "Organisation d'événements" }
+    },
+    "services": {
+      "s1": {
+        "name": "Salle Al-Andalus",
+        "location": "Alger",
+        "description": "Une salle spacieuse au design moderne, adaptée à tous types d'événements, avec un service d'accueil professionnel et un grand parking. Notre équipe vous accompagne de la planification jusqu'au jour J pour une expérience fluide, sans aucun détail négligé."
+      },
+      "s2": {
+        "name": "Studio Lamsa",
+        "location": "Oran",
+        "description": "Nous capturons vos moments dans un style documentaire élégant, entre naturel et professionnalisme. Notre équipe expérimentée utilise un matériel moderne pour immortaliser votre événement sous plusieurs angles, avec livraison des photos retouchées en deux semaines."
+      },
+      "s3": {
+        "name": "Décorations Al-Amal",
+        "location": "Constantine",
+        "description": "Nous concevons et installons une décoration sur mesure qui reflète l'esprit de votre événement, de l'éclairage aux compositions florales. Nous nous adaptons à tous les espaces et proposons des solutions adaptées à votre budget."
+      },
+      "s4": {
+        "name": "Traiteur Al-Asala",
+        "location": "Alger",
+        "description": "Des menus variés alliant plats algériens traditionnels et touches modernes, personnalisables selon le nombre d'invités et les goûts. Notre équipe de service s'occupe de tout, de la préparation jusqu'au service."
+      },
+      "s5": {
+        "name": "Groupe Al-Nagham",
+        "location": "Annaba",
+        "description": "Un groupe polyvalent adapté à tous types d'événements, des ambiances calmes aux soirées animées. Nous fournissons également un équipement sonore professionnel adapté à la taille de votre salle."
+      },
+      "s6": {
+        "name": "Boutique des Invitations Élégantes",
+        "location": "Oran",
+        "description": "Des faire-part imprimés et numériques au design élégant et entièrement personnalisable, avec possibilité d'ajouter des cadeaux souvenirs assortis. Livraison rapide, quel que soit votre délai."
+      },
+      "s7": {
+        "name": "Salon de beauté Lamasat",
+        "location": "Blida",
+        "description": "Des services de beauté complets, maquillage et coiffure, par une équipe formée aux dernières techniques. Nous proposons également des essais avant le jour J."
+      },
+      "s8": {
+        "name": "Al-Nokhba Organisation d'Événements",
+        "location": "Alger",
+        "description": "Nous organisons votre événement de A à Z : choix du lieu, coordination avec les prestataires et gestion du planning le jour J. Notre équipe vous accompagne à chaque étape pour votre tranquillité d'esprit."
+      },
+      "s9": {
+        "name": "Salle de conférence Al-Nour",
+        "location": "Sétif",
+        "description": "Une salle équipée des derniers systèmes de son et de projection, adaptée aux conférences et événements professionnels de toute taille. Service d'accueil et agencement des places sur demande."
+      },
+      "s10": {
+        "name": "Studio Cadre Doré",
+        "location": "Constantine",
+        "description": "Des séances photo professionnelles au style cinématographique, qui mettent en valeur les plus beaux détails de votre événement. Impression et albums personnalisés disponibles après livraison."
+      },
+      "s11": {
+        "name": "Coordination le Jour J",
+        "location": "Alger",
+        "description": "Coordination le jour J pour celles et ceux qui ont organisé leur événement eux-mêmes et souhaitent une équipe professionnelle pour une exécution sans accroc. Nous assurons le lien avec tous vos prestataires jusqu'à la fin de l'événement."
+      },
+      "s12": {
+        "name": "Vidéographie d'Événements",
+        "location": "Oran",
+        "description": "Une couverture vidéo complète de votre événement avec un montage professionnel réunissant les meilleurs moments dans un court film. Une version longue non montée est disponible sur demande."
+      }
+    },
+    "providers": {
+      "p1": {
+        "name": "Salle Al-Andalus",
+        "bio": "Nous accueillons tous types d'événements dans notre salle entièrement équipée, forts de plus de dix ans d'expérience dans l'organisation d'événements de toutes tailles."
+      },
+      "p2": {
+        "name": "Studio Lamsa",
+        "bio": "Un studio photo professionnel qui immortalise vos événements en photo et en vidéo, avec une équipe spécialisée et un style visuel élégant adapté à tous les goûts."
+      },
+      "p3": {
+        "name": "Décorations Al-Amal",
+        "bio": "Une équipe de design d'intérieur spécialisée dans l'aménagement d'espaces événementiels, de l'éclairage aux compositions florales, avec une touche personnalisée pour chaque client."
+      },
+      "p4": {
+        "name": "Traiteur Al-Asala",
+        "bio": "Un restaurant spécialisé dans la restauration événementielle, avec des menus variés alliant tradition algérienne et touche moderne."
+      },
+      "p5": {
+        "name": "Groupe Al-Nagham",
+        "bio": "Un groupe de musique à l'expérience étendue dans l'animation de tous types d'événements, avec un équipement sonore professionnel et un style adapté à tous les publics."
+      },
+      "p6": {
+        "name": "Boutique des Invitations Élégantes",
+        "bio": "Un atelier de design spécialisé dans les faire-part imprimés et numériques, avec des créations entièrement personnalisables adaptées au style de chaque événement."
+      },
+      "p7": {
+        "name": "Salon de beauté Lamasat",
+        "bio": "Un salon de beauté spécialisé dans la préparation événementielle, avec une équipe formée aux dernières techniques de maquillage et de coiffure."
+      },
+      "p8": {
+        "name": "Al-Nokhba Organisation d'Événements",
+        "bio": "Une agence d'organisation d'événements complète qui gère chaque détail, de la planification à l'exécution — ou seulement le jour J si vous préférez organiser vous-même."
+      },
+      "p9": {
+        "name": "Salle de conférence Al-Nour",
+        "bio": "Une salle équipée des derniers systèmes techniques, dédiée aux conférences et événements professionnels de toutes tailles."
+      },
+      "p10": {
+        "name": "Studio Cadre Doré",
+        "bio": "Un studio photo au style cinématographique, spécialisé dans la mise en valeur des plus beaux détails de votre événement en haute qualité."
+      }
+    },
+    "notifications": {
+      "n1": { "title": "Votre réservation avec « Salle Al-Andalus » a été confirmée", "time": "Il y a 2 heures" },
+      "n2": { "title": "Nouveau message de « Studio Lamsa » au sujet du rendez-vous de la séance", "time": "Il y a 5 heures" },
+      "n3": { "title": "Rappel : votre événement approche dans 10 jours", "time": "Hier" },
+      "n4": { "title": "Votre demande de réservation a été reçue et est en attente de réponse du prestataire", "time": "Il y a 2 jours" },
+      "n5": { "title": "Nouveau message de « Al-Nokhba Organisation d'Événements »", "time": "Il y a une semaine" },
+      "n6": { "title": "Mise à jour de la politique d'annulation et de remboursement", "time": "Il y a deux semaines" }
+    }
+  }
+}

@@ -6,6 +6,7 @@ import { ActivityIcon, InboxIcon, ListIcon, UsersIcon } from '../../components/i
 import { useProviderData } from '../../context/ProviderDataContext'
 import { activityFeed, type ActivityType } from '../../mock-data/adminActivity'
 import type { RequestStatus } from '../../mock-data/providerRequests'
+import { AnimatedMain } from '../../components/Motion'
 
 type LogType = ActivityType | 'new_request'
 
@@ -75,8 +76,8 @@ export default function AdminActivity() {
       <div className="flex flex-1">
         <AdminSidebar />
 
-      <main className="min-w-0 flex-1 px-4 py-6 sm:px-8">
-        <h1 className="font-arabic text-2xl font-bold text-wine-primary">النشاط</h1>
+      <AnimatedMain className="min-w-0 flex-1 px-4 py-6 sm:px-8">
+        <h1 className="font-arabic text-2xl font-bold text-primary-pink">النشاط</h1>
 
         <div className="mt-4 flex gap-2 overflow-x-auto pb-1">
           {tabs.map((t) => (
@@ -86,7 +87,7 @@ export default function AdminActivity() {
               onClick={() => setActiveTab(t.id)}
               className={`shrink-0 rounded-full border px-4 py-2 font-arabic text-sm transition-colors ${
                 activeTab === t.id
-                  ? 'border-wine-primary bg-wine-primary text-pure-white'
+                  ? 'border-primary-pink bg-primary-pink text-pure-white'
                   : 'border-muted-rose/30 bg-pure-white text-charcoal-text'
               }`}
             >
@@ -115,7 +116,7 @@ export default function AdminActivity() {
                   key={e.id}
                   className="flex items-center gap-3 rounded-3xl bg-pure-white shadow-sm p-4 text-right"
                 >
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-wine-primary/10 text-wine-primary">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary-pink/10 text-primary-pink">
                     <ItemIcon className="h-4 w-4" />
                   </span>
                   <div className="flex flex-1 flex-col gap-0.5">
@@ -130,7 +131,7 @@ export default function AdminActivity() {
             })}
           </div>
         )}
-      </main>
+      </AnimatedMain>
     </div>
     </div>
   )

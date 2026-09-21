@@ -2,6 +2,7 @@ import type { ReactElement } from 'react'
 import { useTranslation } from 'react-i18next'
 import EmptyState from '../../components/EmptyState'
 import { BellIcon, CalendarIcon, InfoIcon, MessageIcon } from '../../components/icons'
+import { StaggerItem, StaggerList } from '../../components/Motion'
 import { notifications, type AppNotification } from '../../mock-data/notifications'
 
 const kindIcon: Record<AppNotification['kind'], (props: { className?: string }) => ReactElement> = {
@@ -17,11 +18,11 @@ export default function Notifications() {
 
   return (
     <main className="min-h-full bg-cream-base px-6 pb-28 pt-10">
-      <h1 className="text-start font-arabic text-2xl font-bold text-wine-primary">
+      <h1 className="text-start font-arabic text-2xl font-bold text-primary-pink">
         {t('title')}
       </h1>
 
-      <div className="mt-6 flex flex-col gap-3">
+      <StaggerList className="mt-6 flex flex-col gap-3">
         {notifications.length === 0 && (
           <EmptyState
             icon={<BellIcon className="h-6 w-6" />}
@@ -32,7 +33,7 @@ export default function Notifications() {
         {notifications.map((n) => {
           const NotifIcon = kindIcon[n.kind]
           return (
-            <div
+            <StaggerItem
               key={n.id}
               className={`flex items-start gap-3 rounded-3xl p-4 text-start ${
                 n.read ? 'bg-pure-white shadow-sm' : 'border border-warm-gold/40 bg-warm-gold/10'
@@ -40,11 +41,11 @@ export default function Notifications() {
             >
               <span
                 aria-hidden="true"
-                className={`mt-2 h-2 w-2 shrink-0 rounded-full bg-wine-primary ${
+                className={`mt-2 h-2 w-2 shrink-0 rounded-full bg-primary-pink ${
                   n.read ? 'opacity-0' : 'opacity-100'
                 }`}
               />
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-wine-primary/10 text-wine-primary">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-pink/10 text-primary-pink">
                 <NotifIcon className="h-5 w-5" />
               </span>
               <div className="flex flex-1 flex-col gap-1">
@@ -59,10 +60,10 @@ export default function Notifications() {
                   {t(`mockData:notifications.${n.id}.time`)}
                 </span>
               </div>
-            </div>
+            </StaggerItem>
           )
         })}
-      </div>
+      </StaggerList>
 
     </main>
   )

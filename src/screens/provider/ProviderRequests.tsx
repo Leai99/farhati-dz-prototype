@@ -6,6 +6,9 @@ import ProviderSidebar from '../../components/ProviderSidebar'
 import { useProviderData } from '../../context/ProviderDataContext'
 import { CURRENT_PROVIDER_ID } from '../../mock-data/session'
 import type { RequestStatus } from '../../mock-data/providerRequests'
+import { AnimatedMain, StaggerItem, StaggerList } from '../../components/Motion'
+import { m } from 'framer-motion'
+import { pressable } from '../../lib/motion'
 
 const tabs: { id: RequestStatus | 'all'; label: string }[] = [
   { id: 'all', label: 'الكل' },
@@ -42,8 +45,8 @@ export default function ProviderRequests() {
     <div className="flex min-h-screen bg-cream-base">
       <ProviderSidebar />
 
-      <main className="min-w-0 flex-1 px-4 py-6 sm:px-8">
-        <h1 className="font-arabic text-2xl font-bold text-wine-primary">الطلبات</h1>
+      <AnimatedMain className="min-w-0 flex-1 px-4 py-6 sm:px-8">
+        <h1 className="font-arabic text-2xl font-bold text-primary-pink">الطلبات</h1>
 
         <div className="mt-4 flex gap-2 overflow-x-auto pb-1">
           {tabs.map((t) => (
@@ -53,7 +56,7 @@ export default function ProviderRequests() {
               onClick={() => setActiveTab(t.id)}
               className={`shrink-0 rounded-full border px-4 py-2 font-arabic text-sm transition-colors ${
                 activeTab === t.id
-                  ? 'border-wine-primary bg-wine-primary text-pure-white'
+                  ? 'border-primary-pink bg-primary-pink text-pure-white'
                   : 'border-muted-rose/30 bg-pure-white text-charcoal-text'
               }`}
             >
@@ -79,11 +82,11 @@ export default function ProviderRequests() {
             }
           />
         ) : (
-          <div className="mt-6 flex max-w-md flex-col gap-3">
+          <StaggerList className="mt-6 flex max-w-md flex-col gap-3">
             {visibleRequests.map((r) => {
               const service = services.find((s) => s.id === r.serviceId)
               return (
-                <div
+                <StaggerItem
                   key={r.id}
                   className="flex flex-col gap-3 rounded-3xl bg-pure-white p-4 text-right shadow-sm"
                 >
@@ -104,28 +107,30 @@ export default function ProviderRequests() {
 
                   {r.status === 'pending' && (
                     <div className="flex gap-2">
-                      <button
+                      <m.button
+                        {...pressable}
                         type="button"
                         onClick={() => updateRequestStatus(r.id, 'accepted')}
-                        className="flex-1 rounded-full bg-wine-primary px-4 py-2 font-arabic text-sm font-semibold text-pure-white"
+                        className="flex-1 rounded-full bg-primary-pink px-4 py-2 font-arabic text-sm font-semibold text-pure-white"
                       >
                         قبول
-                      </button>
-                      <button
+                      </m.button>
+                      <m.button
+                        {...pressable}
                         type="button"
                         onClick={() => updateRequestStatus(r.id, 'declined')}
-                        className="flex-1 rounded-full border border-wine-primary px-4 py-2 font-arabic text-sm font-semibold text-wine-primary"
+                        className="flex-1 rounded-full border border-primary-pink px-4 py-2 font-arabic text-sm font-semibold text-primary-pink"
                       >
                         رفض
-                      </button>
+                      </m.button>
                     </div>
                   )}
-                </div>
+                </StaggerItem>
               )
             })}
-          </div>
+          </StaggerList>
         )}
-      </main>
+      </AnimatedMain>
     </div>
   )
 }

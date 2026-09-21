@@ -8,8 +8,8 @@ interface BadgeProps {
 }
 
 const toneClasses: Record<BadgeTone, string> = {
-  positive: 'bg-wine-primary/10 text-wine-primary',
-  warning: 'bg-warm-gold/15 text-wine-primary',
+  positive: 'bg-primary-pink/10 text-primary-pink',
+  warning: 'bg-warm-gold/15 text-primary-pink',
   neutral: 'bg-muted-rose/20 text-charcoal-text/70',
 }
 

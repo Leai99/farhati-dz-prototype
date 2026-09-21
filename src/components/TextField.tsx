@@ -20,7 +20,7 @@ export default function TextField({ label, id, error, ...props }: TextFieldProps
         aria-invalid={error ? true : undefined}
         aria-describedby={errorId}
         className={`rounded-xl border bg-pure-white px-4 py-3 text-charcoal-text outline-none placeholder:text-charcoal-text/40 ${
-          error ? 'border-muted-rose focus:border-muted-rose' : 'border-muted-rose/40 focus:border-wine-primary'
+          error ? 'border-muted-rose focus:border-muted-rose' : 'border-muted-rose/40 focus:border-primary-pink'
         }`}
         {...props}
       />

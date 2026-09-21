@@ -10,8 +10,12 @@
  */
 
 export const colors = {
-  /** Primary elements, buttons, important headings */
-  'wine-primary': '#6E2B45',
+  /**
+   * Primary elements, buttons, important headings.
+   * Brand pink (was wine #6E2B45). Target #E6598E darkened to keep white
+   * button text at WCAG AA (4.82:1; #E6598E itself is only 3.4:1).
+   */
+  'primary-pink': '#D92166',
   /** General background, white space */
   'cream-base': '#F7EEE4',
   /** Distinctive details, selected icons, subtle borders */

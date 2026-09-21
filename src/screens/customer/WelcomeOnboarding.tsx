@@ -20,10 +20,10 @@ export default function WelcomeOnboarding() {
           />
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-gradient-to-t from-wine-primary/30 to-transparent"
+            className="absolute inset-0 bg-gradient-to-t from-primary-pink/30 to-transparent"
           />
         </div>
-        <h1 className="font-arabic text-2xl font-bold text-wine-primary">{t('title')}</h1>
+        <h1 className="font-arabic text-2xl font-bold text-primary-pink">{t('title')}</h1>
         <p className="max-w-sm font-arabic text-base leading-relaxed text-charcoal-text/80">
           {t('body')}
         </p>

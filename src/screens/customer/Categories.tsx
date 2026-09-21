@@ -1,6 +1,8 @@
+import { m } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import BackButton from '../../components/BackButton'
+import { liftable } from '../../lib/motion'
 import { categoryImage } from '../../lib/serviceDisplay'
 import { categories } from '../../mock-data/services'
 
@@ -22,17 +24,18 @@ export default function Categories() {
 
       <div className="mx-auto flex w-full max-w-sm flex-1 flex-col gap-8 pt-4">
         <div className="flex flex-col gap-2 text-start">
-          <h1 className="font-arabic text-2xl font-bold text-wine-primary">{t('title')}</h1>
+          <h1 className="font-arabic text-2xl font-bold text-primary-pink">{t('title')}</h1>
           <p className="font-arabic text-sm text-charcoal-text/70">{t('subtitle')}</p>
         </div>
 
         <div className="grid grid-cols-2 gap-4">
           {categories.map((c) => (
-            <button
+            <m.button
+              {...liftable}
               key={c.id}
               type="button"
               onClick={() => navigate('/explore', { state: { categoryId: c.id }, replace: true })}
-              className="group flex flex-col overflow-hidden rounded-3xl border border-muted-rose/30 bg-pure-white text-center shadow-sm transition-colors hover:border-wine-primary"
+              className="group flex flex-col overflow-hidden rounded-3xl border border-muted-rose/30 bg-pure-white text-center shadow-sm transition-colors hover:border-primary-pink"
             >
               <span className="relative block h-24 w-full overflow-hidden">
                 <img
@@ -49,7 +52,7 @@ export default function Categories() {
               <span className="px-3 py-3 font-arabic text-sm font-medium text-charcoal-text">
                 {t(`mockData:categories.${c.id}.label`)}
               </span>
-            </button>
+            </m.button>
           ))}
         </div>
       </div>

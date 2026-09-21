@@ -5,6 +5,7 @@ import Badge from '../../components/Badge'
 import EmptyState from '../../components/EmptyState'
 import { SearchIcon } from '../../components/icons'
 import { adminUsers, type UserStatus } from '../../mock-data/adminUsers'
+import { AnimatedMain } from '../../components/Motion'
 
 const statusLabel: Record<UserStatus, string> = { active: 'نشط', suspended: 'موقوف' }
 const statusTone: Record<UserStatus, 'positive' | 'neutral'> = {
@@ -49,8 +50,8 @@ export default function AdminUsers() {
       <div className="flex flex-1">
         <AdminSidebar />
 
-      <main className="min-w-0 flex-1 px-4 py-6 sm:px-8">
-        <h1 className="font-arabic text-2xl font-bold text-wine-primary">المستخدمون</h1>
+      <AnimatedMain className="min-w-0 flex-1 px-4 py-6 sm:px-8">
+        <h1 className="font-arabic text-2xl font-bold text-primary-pink">المستخدمون</h1>
 
         <div className="mt-4 flex max-w-2xl flex-col gap-3 sm:flex-row sm:items-center">
           <div className="relative flex-1">
@@ -61,7 +62,7 @@ export default function AdminUsers() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="ابحث بالاسم أو البريد الإلكتروني"
-              className="w-full rounded-full border border-muted-rose/30 bg-pure-white py-2.5 ps-11 pe-4 font-arabic text-sm text-charcoal-text outline-none placeholder:text-charcoal-text/40 focus:border-wine-primary"
+              className="w-full rounded-full border border-muted-rose/30 bg-pure-white py-2.5 ps-11 pe-4 font-arabic text-sm text-charcoal-text outline-none placeholder:text-charcoal-text/40 focus:border-primary-pink"
             />
           </div>
           <div className="flex gap-2">
@@ -72,7 +73,7 @@ export default function AdminUsers() {
                 onClick={() => setStatusFilter(f.id)}
                 className={`shrink-0 rounded-full border px-4 py-2 font-arabic text-sm transition-colors ${
                   statusFilter === f.id
-                    ? 'border-wine-primary bg-wine-primary text-pure-white'
+                    ? 'border-primary-pink bg-primary-pink text-pure-white'
                     : 'border-muted-rose/30 bg-pure-white text-charcoal-text'
                 }`}
               >
@@ -102,7 +103,7 @@ export default function AdminUsers() {
                 className="flex items-center justify-between gap-3 rounded-3xl bg-pure-white shadow-sm p-4 text-right"
               >
                 <div className="flex flex-1 items-center gap-3">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-wine-primary font-arabic text-sm font-semibold text-pure-white">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-pink font-arabic text-sm font-semibold text-pure-white">
                     {u.name.charAt(0)}
                   </span>
                   <div className="flex flex-col gap-0.5">
@@ -122,7 +123,7 @@ export default function AdminUsers() {
             ))}
           </div>
         )}
-      </main>
+      </AnimatedMain>
     </div>
     </div>
   )

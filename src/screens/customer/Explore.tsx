@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import EmptyState from '../../components/EmptyState'
 import FiltersPanel, { type FiltersState } from '../../components/FiltersPanel'
 import { FilterIcon, SearchIcon } from '../../components/icons'
+import { StaggerItem, StaggerList } from '../../components/Motion'
 import ServiceCard from '../../components/ServiceCard'
 import { categories, services } from '../../mock-data/services'
 
@@ -86,7 +87,7 @@ export default function Explore() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder={t('searchPlaceholder')}
-            className="w-full rounded-full border border-muted-rose/30 bg-pure-white py-3 ps-11 pe-4 font-arabic text-sm text-charcoal-text outline-none placeholder:text-charcoal-text/40 focus:border-wine-primary"
+            className="w-full rounded-full border border-muted-rose/30 bg-pure-white py-3 ps-11 pe-4 font-arabic text-sm text-charcoal-text outline-none placeholder:text-charcoal-text/40 focus:border-primary-pink"
           />
         </div>
 
@@ -94,7 +95,7 @@ export default function Explore() {
           type="button"
           onClick={() => setIsFilterOpen(true)}
           aria-label={t('filterAria')}
-          className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-wine-primary text-wine-primary"
+          className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-primary-pink text-primary-pink"
         >
           <FilterIcon className="h-4 w-4" />
           {activeFilterCount > 0 && (
@@ -115,7 +116,7 @@ export default function Explore() {
               onClick={() => toggleChip(c.id)}
               className={`shrink-0 rounded-full border px-4 py-2 font-arabic text-sm transition-colors ${
                 active
-                  ? 'border-wine-primary bg-wine-primary text-pure-white'
+                  ? 'border-primary-pink bg-primary-pink text-pure-white'
                   : 'border-muted-rose/30 bg-pure-white text-charcoal-text'
               }`}
             >
@@ -126,13 +127,13 @@ export default function Explore() {
         <button
           type="button"
           onClick={() => navigate('/categories')}
-          className="shrink-0 rounded-full border border-dashed border-wine-primary/50 px-4 py-2 font-arabic text-sm text-wine-primary"
+          className="shrink-0 rounded-full border border-dashed border-primary-pink/50 px-4 py-2 font-arabic text-sm text-primary-pink"
         >
           {t('allCategories')}
         </button>
       </div>
 
-      <div className="mt-4 flex flex-col gap-3 px-6">
+      <StaggerList className="mt-4 flex flex-col gap-3 px-6">
         {filteredServices.length === 0 ? (
           <EmptyState
             icon={<SearchIcon className="h-6 w-6" />}
@@ -142,14 +143,15 @@ export default function Explore() {
           />
         ) : (
           filteredServices.map((s) => (
-            <ServiceCard
-              key={s.id}
-              service={s}
-              categoryLabel={t(`mockData:categories.${s.categoryId}.label`)}
-            />
+            <StaggerItem key={s.id}>
+              <ServiceCard
+                service={s}
+                categoryLabel={t(`mockData:categories.${s.categoryId}.label`)}
+              />
+            </StaggerItem>
           ))
         )}
-      </div>
+      </StaggerList>
 
       <FiltersPanel
         open={isFilterOpen}

@@ -1,5 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { Outlet, useLocation } from 'react-router-dom'
+import { m } from 'framer-motion'
+import { usePageTransition } from '../lib/motion'
 import BottomNav from './BottomNav'
 import BrandMark from './BrandMark'
 
@@ -25,6 +27,7 @@ export default function CustomerLayout() {
   const location = useLocation()
   const { t } = useTranslation('common')
   const showBottomNav = TAB_ROUTES.has(location.pathname)
+  const pageTransition = usePageTransition()
 
   const brandMessages = [
     t('brandStrip.easy', 'تجربة سهلة وذكية'),
@@ -53,7 +56,15 @@ export default function CustomerLayout() {
       {/* Phone frame — full viewport on mobile, framed mockup on ≥sm */}
       <div className="relative flex h-dvh w-full max-w-[420px] flex-col overflow-hidden bg-cream-base shadow-2xl sm:h-[820px] sm:max-h-[84dvh] sm:rounded-[2.75rem] sm:border-[10px] sm:border-[#1b0e17]">
         <div className="relative flex-1 overflow-y-auto overflow-x-hidden">
-          <Outlet />
+          {/* Page enter transition, keyed per route. The splash is left static
+              so its auto-advance screen behaves exactly as before. */}
+          {location.pathname === '/' ? (
+            <Outlet />
+          ) : (
+            <m.div key={location.pathname} className="h-full" {...pageTransition}>
+              <Outlet />
+            </m.div>
+          )}
         </div>
         {showBottomNav && <BottomNav />}
       </div>

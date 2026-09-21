@@ -3,4 +3,7 @@
 
 body {
   margin: 0;
+  /* Page-enter slides (lib/motion.ts) briefly offset content by a few px;
+     clip (not hidden) so that never flashes a horizontal scrollbar. */
+  overflow-x: clip;
 }

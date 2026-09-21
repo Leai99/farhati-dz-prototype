@@ -22,7 +22,7 @@ export default function ProviderProfile() {
             back is correct here. */}
         <BackButton />
         <div className="flex flex-1 flex-col items-center justify-center gap-2 text-center">
-          <p className="font-arabic text-lg font-semibold text-wine-primary">{t('notFound')}</p>
+          <p className="font-arabic text-lg font-semibold text-primary-pink">{t('notFound')}</p>
         </div>
       </main>
     )
@@ -41,7 +41,7 @@ export default function ProviderProfile() {
 
       <div className="mx-auto flex w-full max-w-sm flex-col gap-6 px-6 pt-2">
         <div className="flex flex-col items-center gap-3 text-center">
-          <span className="flex h-20 w-20 items-center justify-center rounded-full bg-wine-primary font-arabic text-2xl font-semibold text-pure-white">
+          <span className="flex h-20 w-20 items-center justify-center rounded-full bg-primary-pink font-arabic text-2xl font-semibold text-pure-white">
             {name.charAt(0)}
           </span>
           <div className="flex flex-col gap-1">

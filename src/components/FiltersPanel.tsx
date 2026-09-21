@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import type { ServiceCategory } from '../mock-data/services'
 import { CloseIcon, StarIcon } from './icons'
+import { m } from 'framer-motion'
+import { pressable } from '../lib/motion'
 
 export interface FiltersState {
   categoryIds: string[]
@@ -79,7 +81,7 @@ export default function FiltersPanel({
         <div className="mx-auto mb-5 h-1.5 w-12 rounded-full bg-muted-rose/30" aria-hidden="true" />
 
         <div className="flex items-center justify-between">
-          <h2 className="font-arabic text-lg font-semibold text-wine-primary">{t('title')}</h2>
+          <h2 className="font-arabic text-lg font-semibold text-primary-pink">{t('title')}</h2>
           <button
             type="button"
             onClick={onClose}
@@ -105,7 +107,7 @@ export default function FiltersPanel({
                     onClick={() => toggleCategory(c.id)}
                     className={`rounded-full border px-4 py-2 font-arabic text-sm transition-colors ${
                       active
-                        ? 'border-wine-primary bg-wine-primary text-pure-white'
+                        ? 'border-primary-pink bg-primary-pink text-pure-white'
                         : 'border-muted-rose/30 bg-pure-white text-charcoal-text'
                     }`}
                   >
@@ -130,7 +132,7 @@ export default function FiltersPanel({
               step={5000}
               value={draft.maxPrice}
               onChange={(e) => setDraft((d) => ({ ...d, maxPrice: Number(e.target.value) }))}
-              className="w-full accent-wine-primary"
+              className="w-full accent-primary-pink"
               aria-label={t('maxPriceAria')}
             />
           </section>
@@ -163,23 +165,25 @@ export default function FiltersPanel({
         </div>
 
         <div className="mt-8 flex gap-3">
-          <button
+          <m.button
+            {...pressable}
             type="button"
             onClick={reset}
-            className="flex-1 rounded-full border border-wine-primary px-6 py-3 font-arabic text-sm font-semibold text-wine-primary"
+            className="flex-1 rounded-full border border-primary-pink px-6 py-3 font-arabic text-sm font-semibold text-primary-pink"
           >
             {t('reset')}
-          </button>
-          <button
+          </m.button>
+          <m.button
+            {...pressable}
             type="button"
             onClick={() => {
               onApply(draft)
               onClose()
             }}
-            className="flex-1 rounded-full bg-wine-primary px-6 py-3 shadow-md shadow-wine-primary/20 font-arabic text-sm font-semibold text-pure-white"
+            className="flex-1 rounded-full bg-primary-pink px-6 py-3 shadow-md shadow-primary-pink/20 font-arabic text-sm font-semibold text-pure-white"
           >
             {t('apply')}
-          </button>
+          </m.button>
         </div>
       </div>
     </>

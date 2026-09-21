@@ -23,7 +23,7 @@ export default function ServiceDetails() {
       <main className="flex min-h-full flex-col bg-cream-base px-6 py-6">
         <BackButton to="/explore" />
         <div className="flex flex-1 flex-col items-center justify-center gap-2 text-center">
-          <p className="font-arabic text-lg font-semibold text-wine-primary">
+          <p className="font-arabic text-lg font-semibold text-primary-pink">
             {t('notFoundTitle')}
           </p>
           <p className="font-arabic text-sm text-charcoal-text/70">{t('notFoundBody')}</p>
@@ -70,7 +70,7 @@ export default function ServiceDetails() {
 
         <div className="flex items-center justify-between rounded-3xl bg-pure-white shadow-sm px-5 py-4">
           <span className="font-arabic text-sm text-charcoal-text/70">{t('priceRange')}</span>
-          <span className="font-arabic text-base font-semibold text-wine-primary">
+          <span className="font-arabic text-base font-semibold text-primary-pink">
             {formatPrice(service.priceFrom)}–{formatPrice(service.priceTo)}{' '}
             {t('common:currency')}
           </span>
@@ -88,8 +88,8 @@ export default function ServiceDetails() {
           onClick={() => toggleFavorite(service.id)}
           className={`flex items-center justify-center gap-2 rounded-full border px-6 py-3 font-arabic text-sm font-semibold transition-colors ${
             saved
-              ? 'border-wine-primary bg-wine-primary text-pure-white shadow-md shadow-wine-primary/20'
-              : 'border-wine-primary bg-transparent text-wine-primary'
+              ? 'border-primary-pink bg-primary-pink text-pure-white shadow-md shadow-primary-pink/20'
+              : 'border-primary-pink bg-transparent text-primary-pink'
           }`}
         >
           <HeartIcon filled={saved} className="h-4 w-4" />
@@ -104,7 +104,7 @@ export default function ServiceDetails() {
           <span className="font-arabic text-sm font-semibold text-charcoal-text">
             {t('viewProvider')}
           </span>
-          <ForwardArrow className="h-4 w-4 text-wine-primary" />
+          <ForwardArrow className="h-4 w-4 text-primary-pink" />
         </button>
       </div>
     </main>

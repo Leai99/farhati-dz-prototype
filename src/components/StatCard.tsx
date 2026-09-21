@@ -12,7 +12,7 @@ interface StatCardProps {
 }
 
 const chipClasses: Record<StatCardTone, string> = {
-  wine: 'bg-wine-primary/10 text-wine-primary',
+  wine: 'bg-primary-pink/10 text-primary-pink',
   gold: 'bg-warm-gold/20 text-warm-gold',
   rose: 'bg-muted-rose/20 text-muted-rose',
 }
@@ -26,7 +26,7 @@ export default function StatCard({ label, value, icon, tone = 'wine' }: StatCard
           {icon}
         </span>
       )}
-      <span className="font-arabic text-xl font-bold text-wine-primary">{value}</span>
+      <span className="font-arabic text-xl font-bold text-primary-pink">{value}</span>
       <span className="font-arabic text-[11px] text-charcoal-text/60">{label}</span>
     </div>
   )

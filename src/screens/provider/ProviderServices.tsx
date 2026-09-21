@@ -4,6 +4,9 @@ import ProviderServiceCard from '../../components/ProviderServiceCard'
 import { useProviderData } from '../../context/ProviderDataContext'
 import { CURRENT_PROVIDER_ID } from '../../mock-data/session'
 import { categories } from '../../mock-data/services'
+import { AnimatedMain } from '../../components/Motion'
+import { m } from 'framer-motion'
+import { pressable } from '../../lib/motion'
 
 /**
  * Service Provider App — Screen 5/9 (Section 5.B): Services.
@@ -19,16 +22,17 @@ export default function ProviderServices() {
     <div className="flex min-h-screen bg-cream-base">
       <ProviderSidebar />
 
-      <main className="min-w-0 flex-1 px-4 py-6 sm:px-8">
+      <AnimatedMain className="min-w-0 flex-1 px-4 py-6 sm:px-8">
         <div className="flex items-center justify-between gap-3">
-          <h1 className="font-arabic text-2xl font-bold text-wine-primary">خدماتي</h1>
-          <button
+          <h1 className="font-arabic text-2xl font-bold text-primary-pink">خدماتي</h1>
+          <m.button
+            {...pressable}
             type="button"
             onClick={() => navigate('/provider-app/services/new')}
-            className="shrink-0 rounded-full bg-wine-primary px-4 py-2.5 shadow-md shadow-wine-primary/20 font-arabic text-sm font-semibold text-pure-white"
+            className="shrink-0 rounded-full bg-primary-pink px-4 py-2.5 shadow-md shadow-primary-pink/20 font-arabic text-sm font-semibold text-pure-white"
           >
             + إضافة خدمة
-          </button>
+          </m.button>
         </div>
 
         {myServices.length === 0 ? (
@@ -51,7 +55,7 @@ export default function ProviderServices() {
             ))}
           </div>
         )}
-      </main>
+      </AnimatedMain>
     </div>
   )
 }

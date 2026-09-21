@@ -2,7 +2,7 @@ import type { ServiceTone } from '../mock-data/services'
 
 /** Shared between Explore, Service Details, Provider Profile and Favorites. */
 export const toneClasses: Record<ServiceTone, string> = {
-  wine: 'bg-wine-primary',
+  wine: 'bg-primary-pink',
   gold: 'bg-warm-gold',
   rose: 'bg-muted-rose',
 }

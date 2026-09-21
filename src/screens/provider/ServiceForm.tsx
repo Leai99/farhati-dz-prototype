@@ -5,6 +5,9 @@ import ProviderSidebar from '../../components/ProviderSidebar'
 import { useProviderData } from '../../context/ProviderDataContext'
 import { CURRENT_PROVIDER_ID } from '../../mock-data/session'
 import { categories } from '../../mock-data/services'
+import { AnimatedMain } from '../../components/Motion'
+import { m } from 'framer-motion'
+import { pressable } from '../../lib/motion'
 
 interface FormErrors {
   name?: string
@@ -15,7 +18,7 @@ interface FormErrors {
 
 const inputBase =
   'rounded-xl border bg-pure-white px-4 py-3 text-charcoal-text outline-none placeholder:text-charcoal-text/40'
-const inputValid = 'border-muted-rose/40 focus:border-wine-primary'
+const inputValid = 'border-muted-rose/40 focus:border-primary-pink'
 const inputInvalid = 'border-muted-rose focus:border-muted-rose'
 
 /**
@@ -48,11 +51,11 @@ export default function ServiceForm() {
     return (
       <div className="flex min-h-screen bg-cream-base">
         <ProviderSidebar />
-        <main className="flex flex-1 flex-col items-center justify-center gap-2 p-6 text-center">
-          <p className="font-arabic text-lg font-semibold text-wine-primary">
+        <AnimatedMain className="flex flex-1 flex-col items-center justify-center gap-2 p-6 text-center">
+          <p className="font-arabic text-lg font-semibold text-primary-pink">
             لم يتم العثور على هذه الخدمة
           </p>
-        </main>
+        </AnimatedMain>
       </div>
     )
   }
@@ -107,8 +110,8 @@ export default function ServiceForm() {
     <div className="flex min-h-screen bg-cream-base">
       <ProviderSidebar />
 
-      <main className="min-w-0 flex-1 px-4 py-6 sm:px-8">
-        <h1 className="font-arabic text-2xl font-bold text-wine-primary">
+      <AnimatedMain className="min-w-0 flex-1 px-4 py-6 sm:px-8">
+        <h1 className="font-arabic text-2xl font-bold text-primary-pink">
           {isEditMode ? 'تعديل الخدمة' : 'إضافة خدمة جديدة'}
         </h1>
 
@@ -186,24 +189,25 @@ export default function ServiceForm() {
               rows={4}
               placeholder="صف خدمتك بإيجاز لعملائك"
               required
-              className="resize-none rounded-xl border border-muted-rose/40 bg-pure-white px-4 py-3 text-charcoal-text outline-none placeholder:text-charcoal-text/40 focus:border-wine-primary"
+              className="resize-none rounded-xl border border-muted-rose/40 bg-pure-white px-4 py-3 text-charcoal-text outline-none placeholder:text-charcoal-text/40 focus:border-primary-pink"
             />
           </label>
 
           <div className="mt-2 flex gap-3">
-            <button
+            <m.button
+              {...pressable}
               type="button"
               onClick={() => navigate('/provider-app/services')}
-              className="flex-1 rounded-full border border-wine-primary px-6 py-3 font-arabic text-sm font-semibold text-wine-primary"
+              className="flex-1 rounded-full border border-primary-pink px-6 py-3 font-arabic text-sm font-semibold text-primary-pink"
             >
               إلغاء
-            </button>
+            </m.button>
             <div className="flex-1">
               <Button type="submit">{isEditMode ? 'حفظ التعديلات' : 'إضافة الخدمة'}</Button>
             </div>
           </div>
         </form>
-      </main>
+      </AnimatedMain>
     </div>
   )
 }

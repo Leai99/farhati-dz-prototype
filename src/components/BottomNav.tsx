@@ -36,7 +36,7 @@ export default function BottomNav() {
             aria-label={label}
             aria-current={active ? 'page' : undefined}
             className={`flex flex-1 flex-col items-center gap-1 rounded-xl py-1.5 font-arabic text-[11px] transition-colors ${
-              active ? 'text-wine-primary' : 'text-charcoal-text/50'
+              active ? 'text-primary-pink' : 'text-charcoal-text/50'
             }`}
           >
             <TabIcon className="h-5 w-5" />

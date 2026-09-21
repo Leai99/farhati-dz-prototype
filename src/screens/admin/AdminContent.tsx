@@ -6,6 +6,9 @@ import EmptyState from '../../components/EmptyState'
 import { ListIcon } from '../../components/icons'
 import { useProviderData } from '../../context/ProviderDataContext'
 import { categories } from '../../mock-data/services'
+import { AnimatedMain } from '../../components/Motion'
+import { m } from 'framer-motion'
+import { pressable } from '../../lib/motion'
 
 type ModerationStatus = 'approved' | 'pending' | 'flagged'
 
@@ -76,8 +79,8 @@ export default function AdminContent() {
       <div className="flex flex-1">
         <AdminSidebar />
 
-      <main className="min-w-0 flex-1 px-4 py-6 sm:px-8">
-        <h1 className="font-arabic text-2xl font-bold text-wine-primary">المحتوى</h1>
+      <AnimatedMain className="min-w-0 flex-1 px-4 py-6 sm:px-8">
+        <h1 className="font-arabic text-2xl font-bold text-primary-pink">المحتوى</h1>
 
         <div className="mt-4 flex gap-2 overflow-x-auto pb-1">
           {tabs.map((t) => (
@@ -87,7 +90,7 @@ export default function AdminContent() {
               onClick={() => setActiveTab(t.id)}
               className={`shrink-0 rounded-full border px-4 py-2 font-arabic text-sm transition-colors ${
                 activeTab === t.id
-                  ? 'border-wine-primary bg-wine-primary text-pure-white'
+                  ? 'border-primary-pink bg-primary-pink text-pure-white'
                   : 'border-muted-rose/30 bg-pure-white text-charcoal-text'
               }`}
             >
@@ -131,22 +134,24 @@ export default function AdminContent() {
 
                   <div className="flex gap-2">
                     {status !== 'approved' && (
-                      <button
+                      <m.button
+                        {...pressable}
                         type="button"
                         onClick={() => setStatus(s.id, 'approved')}
-                        className="flex-1 rounded-full bg-wine-primary px-4 py-2 font-arabic text-sm font-semibold text-pure-white"
+                        className="flex-1 rounded-full bg-primary-pink px-4 py-2 font-arabic text-sm font-semibold text-pure-white"
                       >
                         اعتماد
-                      </button>
+                      </m.button>
                     )}
                     {status !== 'flagged' && (
-                      <button
+                      <m.button
+                        {...pressable}
                         type="button"
                         onClick={() => setStatus(s.id, 'flagged')}
-                        className="flex-1 rounded-full border border-wine-primary px-4 py-2 font-arabic text-sm font-semibold text-wine-primary"
+                        className="flex-1 rounded-full border border-primary-pink px-4 py-2 font-arabic text-sm font-semibold text-primary-pink"
                       >
                         إبلاغ
-                      </button>
+                      </m.button>
                     )}
                   </div>
                 </div>
@@ -154,7 +159,7 @@ export default function AdminContent() {
             })}
           </div>
         )}
-      </main>
+      </AnimatedMain>
     </div>
     </div>
   )

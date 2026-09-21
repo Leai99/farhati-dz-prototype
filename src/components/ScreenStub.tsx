@@ -22,7 +22,7 @@ export default function ScreenStub({
     <main className="flex min-h-screen flex-col bg-cream-base px-6 py-6">
       <BackButton to={backTo} />
       <div className="flex flex-1 flex-col items-center justify-center gap-2 text-center">
-        <p className="font-arabic text-xl font-semibold text-wine-primary">{title}</p>
+        <p className="font-arabic text-xl font-semibold text-primary-pink">{title}</p>
         <p className="font-arabic text-sm text-charcoal-text/70">{message}</p>
       </div>
     </main>

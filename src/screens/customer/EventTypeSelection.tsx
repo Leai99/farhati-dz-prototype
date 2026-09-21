@@ -1,7 +1,9 @@
 import type { ReactNode } from 'react'
+import { m } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import BackButton from '../../components/BackButton'
+import { liftable } from '../../lib/motion'
 
 function Icon({ children }: { children: ReactNode }) {
   return (
@@ -87,27 +89,28 @@ export default function EventTypeSelection() {
 
       <div className="mx-auto flex w-full max-w-sm flex-1 flex-col gap-8 pt-4">
         <div className="flex flex-col gap-2 text-start">
-          <h1 className="font-arabic text-2xl font-bold text-wine-primary">{t('title')}</h1>
+          <h1 className="font-arabic text-2xl font-bold text-primary-pink">{t('title')}</h1>
           <p className="font-arabic text-sm text-charcoal-text/70">{t('subtitle')}</p>
         </div>
 
         <div className="grid grid-cols-2 gap-4">
           {eventTypes.map(({ id, key, icon: TypeIcon, wide }) => (
-            <button
+            <m.button
+              {...liftable}
               key={id}
               type="button"
               onClick={() => navigate('/explore')}
-              className={`flex flex-col items-center gap-3 rounded-3xl border border-muted-rose/30 bg-pure-white px-4 py-5 text-center shadow-sm transition-colors hover:border-wine-primary ${
+              className={`flex flex-col items-center gap-3 rounded-3xl border border-muted-rose/30 bg-pure-white px-4 py-5 text-center shadow-sm transition-colors hover:border-primary-pink ${
                 wide ? 'col-span-2' : ''
               }`}
             >
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-warm-gold/15 text-wine-primary">
+              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-warm-gold/15 text-primary-pink">
                 <TypeIcon />
               </span>
               <span className="font-arabic text-sm font-medium text-charcoal-text">
                 {t(`types.${key}`)}
               </span>
-            </button>
+            </m.button>
           ))}
         </div>
       </div>

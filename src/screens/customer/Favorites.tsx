@@ -21,7 +21,7 @@ export default function Favorites() {
       </div>
 
       <div className="mx-auto flex w-full max-w-sm flex-col gap-6 px-6 pt-2">
-        <h1 className="text-start font-arabic text-2xl font-bold text-wine-primary">
+        <h1 className="text-start font-arabic text-2xl font-bold text-primary-pink">
           {t('title')}
         </h1>
 

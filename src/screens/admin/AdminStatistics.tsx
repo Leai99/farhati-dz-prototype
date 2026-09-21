@@ -2,6 +2,7 @@ import AdminPreviewBanner from '../../components/AdminPreviewBanner'
 import AdminSidebar from '../../components/AdminSidebar'
 import { useProviderData } from '../../context/ProviderDataContext'
 import { categories } from '../../mock-data/services'
+import { AnimatedMain } from '../../components/Motion'
 
 /**
  * Admin App — Screen 6/6 (Section 5.C): Statistics. Route: "/admin/statistics"
@@ -31,7 +32,7 @@ export default function AdminStatistics() {
       id: 'accepted',
       label: 'مقبول',
       count: requests.filter((r) => r.status === 'accepted').length,
-      className: 'bg-wine-primary',
+      className: 'bg-primary-pink',
     },
     {
       id: 'declined',
@@ -49,8 +50,8 @@ export default function AdminStatistics() {
       <div className="flex flex-1">
         <AdminSidebar />
 
-      <main className="min-w-0 flex-1 px-4 py-6 sm:px-8">
-        <h1 className="font-arabic text-2xl font-bold text-wine-primary">الإحصائيات</h1>
+      <AnimatedMain className="min-w-0 flex-1 px-4 py-6 sm:px-8">
+        <h1 className="font-arabic text-2xl font-bold text-primary-pink">الإحصائيات</h1>
 
         <section className="mt-6 max-w-2xl rounded-3xl bg-pure-white shadow-sm p-5 text-right">
           <h2 className="font-arabic text-sm font-semibold text-charcoal-text">
@@ -61,13 +62,13 @@ export default function AdminStatistics() {
               <div key={c.label} className="flex flex-col gap-1">
                 <div className="flex items-center justify-between">
                   <span className="font-arabic text-xs text-charcoal-text/70">{c.label}</span>
-                  <span className="font-arabic text-xs font-semibold text-wine-primary">
+                  <span className="font-arabic text-xs font-semibold text-primary-pink">
                     {c.count}
                   </span>
                 </div>
                 <div className="h-2.5 w-full overflow-hidden rounded-full bg-muted-rose/15">
                   <div
-                    className="h-full rounded-full bg-wine-primary"
+                    className="h-full rounded-full bg-primary-pink"
                     style={{ width: `${(c.count / maxCategoryCount) * 100}%` }}
                   />
                 </div>
@@ -102,7 +103,7 @@ export default function AdminStatistics() {
             ))}
           </div>
         </section>
-      </main>
+      </AnimatedMain>
     </div>
     </div>
   )

@@ -1,6 +1,8 @@
+import { m } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { useFavorites } from '../context/FavoritesContext'
+import { liftable } from '../lib/motion'
 import { categoryImage, formatPrice, toneClasses } from '../lib/serviceDisplay'
 import type { Service } from '../mock-data/services'
 import { HeartIcon } from './icons'
@@ -30,7 +32,7 @@ export default function ServiceCard({
   const location = t(`mockData:services.${service.id}.location`)
 
   return (
-    <div className="flex items-center gap-1 rounded-3xl bg-pure-white p-4 shadow-sm">
+    <m.div {...liftable} className="flex items-center gap-1 rounded-3xl bg-pure-white p-4 shadow-sm">
       <button
         type="button"
         onClick={() => navigate(`/service/${service.id}`)}
@@ -53,7 +55,7 @@ export default function ServiceCard({
           </span>
           <div className="mt-1 flex items-center justify-between">
             <RatingBadge rating={service.rating} reviewCount={service.reviewCount} />
-            <span className="font-arabic text-xs font-semibold text-wine-primary">
+            <span className="font-arabic text-xs font-semibold text-primary-pink">
               {formatPrice(service.priceFrom)}–{formatPrice(service.priceTo)} {t('common:currency')}
             </span>
           </div>
@@ -65,11 +67,11 @@ export default function ServiceCard({
           type="button"
           onClick={() => toggleFavorite(service.id)}
           aria-label={saved ? t('common:removeFromFavorites') : t('common:saveToFavorites')}
-          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-wine-primary hover:bg-muted-rose/10"
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-primary-pink hover:bg-muted-rose/10"
         >
           <HeartIcon filled={saved} />
         </button>
       )}
-    </div>
+    </m.div>
   )
 }

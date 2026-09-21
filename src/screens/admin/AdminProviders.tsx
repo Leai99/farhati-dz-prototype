@@ -7,6 +7,7 @@ import { StoreIcon } from '../../components/icons'
 import RatingBadge from '../../components/RatingBadge'
 import { useProviderData } from '../../context/ProviderDataContext'
 import { categories } from '../../mock-data/services'
+import { AnimatedMain } from '../../components/Motion'
 
 /**
  * Admin App — Screen 3/6 (Section 5.C): Providers. Route: "/admin/providers"
@@ -27,8 +28,8 @@ export default function AdminProviders() {
       <div className="flex flex-1">
         <AdminSidebar />
 
-      <main className="min-w-0 flex-1 px-4 py-6 sm:px-8">
-        <h1 className="font-arabic text-2xl font-bold text-wine-primary">مقدّمو الخدمات</h1>
+      <AnimatedMain className="min-w-0 flex-1 px-4 py-6 sm:px-8">
+        <h1 className="font-arabic text-2xl font-bold text-primary-pink">مقدّمو الخدمات</h1>
 
         {providers.length === 0 ? (
           <EmptyState
@@ -51,7 +52,7 @@ export default function AdminProviders() {
                   className="flex items-center justify-between gap-3 rounded-3xl bg-pure-white p-4 text-right shadow-sm transition-colors hover:shadow-md"
                 >
                   <div className="flex flex-1 items-center gap-3">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-wine-primary font-arabic text-sm font-semibold text-pure-white">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-pink font-arabic text-sm font-semibold text-pure-white">
                       {p.name.charAt(0)}
                     </span>
                     <div className="flex flex-col gap-0.5">
@@ -72,7 +73,7 @@ export default function AdminProviders() {
             })}
           </div>
         )}
-      </main>
+      </AnimatedMain>
     </div>
     </div>
   )

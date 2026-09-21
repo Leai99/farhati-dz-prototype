@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { setLanguage, type AppLanguage } from '../../i18n'
+import { m } from 'framer-motion'
+import { pressable } from '../../lib/motion'
 
 // Language option labels are intentionally NOT translated — a language
 // switcher conventionally shows each language's name in its own native
@@ -25,7 +27,7 @@ export default function Profile() {
   return (
     <main className="min-h-full bg-cream-base px-6 pb-28 pt-10">
       <div className="flex flex-col items-center gap-3 text-center">
-        <span className="flex h-20 w-20 items-center justify-center rounded-full bg-wine-primary font-arabic text-2xl font-semibold text-pure-white">
+        <span className="flex h-20 w-20 items-center justify-center rounded-full bg-primary-pink font-arabic text-2xl font-semibold text-pure-white">
           {userName.charAt(0)}
         </span>
         <div className="flex flex-col gap-1">
@@ -47,7 +49,7 @@ export default function Profile() {
                 onClick={() => setLanguage(l.code)}
                 className={`flex-1 rounded-xl border px-3 py-2 font-arabic text-sm transition-colors ${
                   i18n.language === l.code
-                    ? 'border-wine-primary bg-wine-primary text-pure-white'
+                    ? 'border-primary-pink bg-primary-pink text-pure-white'
                     : 'border-muted-rose/30 bg-cream-base text-charcoal-text'
                 }`}
               >
@@ -68,7 +70,7 @@ export default function Profile() {
             aria-label={t('notificationsToggle')}
             onClick={() => setNotificationsEnabled((v) => !v)}
             className={`relative h-6 w-11 shrink-0 rounded-full transition-colors ${
-              notificationsEnabled ? 'bg-wine-primary' : 'bg-muted-rose/30'
+              notificationsEnabled ? 'bg-primary-pink' : 'bg-muted-rose/30'
             }`}
           >
             <span
@@ -80,13 +82,14 @@ export default function Profile() {
           </button>
         </section>
 
-        <button
+        <m.button
+          {...pressable}
           type="button"
           onClick={() => navigate('/login')}
-          className="rounded-full border border-wine-primary px-6 py-3 font-arabic text-sm font-semibold text-wine-primary"
+          className="rounded-full border border-primary-pink px-6 py-3 font-arabic text-sm font-semibold text-primary-pink"
         >
           {t('logout')}
-        </button>
+        </m.button>
       </div>
 
     </main>

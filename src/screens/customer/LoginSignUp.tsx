@@ -62,7 +62,7 @@ export default function LoginSignUp() {
 
       <div className="mx-auto flex w-full max-w-sm flex-1 flex-col justify-center gap-8">
         <div className="flex flex-col gap-2 text-start">
-          <h1 className="font-arabic text-2xl font-bold text-wine-primary">
+          <h1 className="font-arabic text-2xl font-bold text-primary-pink">
             {isSignUp ? t('signUpTitle') : t('signInTitle')}
           </h1>
           <p className="font-arabic text-sm text-charcoal-text/70">
@@ -108,7 +108,7 @@ export default function LoginSignUp() {
         <button
           type="button"
           onClick={switchMode}
-          className="font-arabic text-sm text-wine-primary underline-offset-4 hover:underline"
+          className="font-arabic text-sm text-primary-pink underline-offset-4 hover:underline"
         >
           {isSignUp ? t('toggleToSignIn') : t('toggleToSignUp')}
         </button>

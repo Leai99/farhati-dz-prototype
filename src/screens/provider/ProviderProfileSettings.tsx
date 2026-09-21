@@ -5,6 +5,9 @@ import ProviderSidebar from '../../components/ProviderSidebar'
 import { useProviderData } from '../../context/ProviderDataContext'
 import { CURRENT_PROVIDER_ID } from '../../mock-data/session'
 import { categories } from '../../mock-data/services'
+import { AnimatedMain } from '../../components/Motion'
+import { m } from 'framer-motion'
+import { pressable } from '../../lib/motion'
 
 const languages = [
   { code: 'ar', label: 'العربية' },
@@ -46,9 +49,9 @@ export default function ProviderProfileSettings() {
     <div className="flex min-h-screen bg-cream-base">
       <ProviderSidebar />
 
-      <main className="min-w-0 flex-1 px-4 py-6 sm:px-8">
+      <AnimatedMain className="min-w-0 flex-1 px-4 py-6 sm:px-8">
         <div className="flex flex-col items-center gap-2 text-center">
-          <span className="flex h-20 w-20 items-center justify-center rounded-full bg-wine-primary font-arabic text-2xl font-semibold text-pure-white">
+          <span className="flex h-20 w-20 items-center justify-center rounded-full bg-primary-pink font-arabic text-2xl font-semibold text-pure-white">
             {provider.name.charAt(0)}
           </span>
         </div>
@@ -60,7 +63,7 @@ export default function ProviderProfileSettings() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
-              className="rounded-xl border border-muted-rose/40 bg-pure-white px-4 py-3 text-charcoal-text outline-none focus:border-wine-primary"
+              className="rounded-xl border border-muted-rose/40 bg-pure-white px-4 py-3 text-charcoal-text outline-none focus:border-primary-pink"
             />
           </label>
 
@@ -69,7 +72,7 @@ export default function ProviderProfileSettings() {
             <select
               value={categoryId}
               onChange={(e) => setCategoryId(e.target.value)}
-              className="rounded-xl border border-muted-rose/40 bg-pure-white px-4 py-3 text-charcoal-text outline-none focus:border-wine-primary"
+              className="rounded-xl border border-muted-rose/40 bg-pure-white px-4 py-3 text-charcoal-text outline-none focus:border-primary-pink"
             >
               {categories.map((c) => (
                 <option key={c.id} value={c.id}>
@@ -86,7 +89,7 @@ export default function ProviderProfileSettings() {
               onChange={(e) => setBio(e.target.value)}
               rows={4}
               required
-              className="resize-none rounded-xl border border-muted-rose/40 bg-pure-white px-4 py-3 text-charcoal-text outline-none focus:border-wine-primary"
+              className="resize-none rounded-xl border border-muted-rose/40 bg-pure-white px-4 py-3 text-charcoal-text outline-none focus:border-primary-pink"
             />
           </label>
 
@@ -104,7 +107,7 @@ export default function ProviderProfileSettings() {
                   onClick={() => setLanguage(l.code)}
                   className={`flex-1 rounded-xl border px-3 py-2 font-arabic text-sm transition-colors ${
                     language === l.code
-                      ? 'border-wine-primary bg-wine-primary text-pure-white'
+                      ? 'border-primary-pink bg-primary-pink text-pure-white'
                       : 'border-muted-rose/30 bg-cream-base text-charcoal-text'
                   }`}
                 >
@@ -125,7 +128,7 @@ export default function ProviderProfileSettings() {
               aria-label="تفعيل الإشعارات"
               onClick={() => setNotificationsEnabled((v) => !v)}
               className={`relative h-6 w-11 shrink-0 rounded-full transition-colors ${
-                notificationsEnabled ? 'bg-wine-primary' : 'bg-muted-rose/30'
+                notificationsEnabled ? 'bg-primary-pink' : 'bg-muted-rose/30'
               }`}
             >
               <span
@@ -137,15 +140,16 @@ export default function ProviderProfileSettings() {
             </button>
           </section>
 
-          <button
+          <m.button
+            {...pressable}
             type="button"
             onClick={() => navigate('/login')}
-            className="rounded-full border border-wine-primary px-6 py-3 font-arabic text-sm font-semibold text-wine-primary"
+            className="rounded-full border border-primary-pink px-6 py-3 font-arabic text-sm font-semibold text-primary-pink"
           >
             تسجيل الخروج
-          </button>
+          </m.button>
         </div>
-      </main>
+      </AnimatedMain>
     </div>
   )
 }

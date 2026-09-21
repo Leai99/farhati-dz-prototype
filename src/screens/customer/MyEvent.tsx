@@ -25,7 +25,7 @@ export default function MyEvent() {
 
   return (
     <main className="min-h-full bg-cream-base px-6 pb-28 pt-10">
-      <h1 className="text-start font-arabic text-2xl font-bold text-wine-primary">
+      <h1 className="text-start font-arabic text-2xl font-bold text-primary-pink">
         {t('title')}
       </h1>
 
@@ -40,7 +40,7 @@ export default function MyEvent() {
       ) : (
         <div className="mt-6 flex flex-col gap-6">
           {/* Signature Event Card — same wine + gold edge-glow treatment as Home's CTA */}
-          <div className="relative overflow-hidden rounded-3xl bg-wine-primary p-6 text-start shadow-md">
+          <div className="relative overflow-hidden rounded-3xl bg-primary-pink p-6 text-start shadow-md">
             <span
               aria-hidden="true"
               className="pointer-events-none absolute -top-10 -left-10 h-40 w-40 rounded-full bg-warm-gold/40 blur-2xl"

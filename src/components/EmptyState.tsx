@@ -1,4 +1,6 @@
 import type { ReactNode } from 'react'
+import { m } from 'framer-motion'
+import { pressable } from '../lib/motion'
 
 interface EmptyStateAction {
   label: string
@@ -35,7 +37,7 @@ export default function EmptyState({
     <div
       className={`flex flex-col items-center gap-3 rounded-3xl bg-pure-white px-6 py-10 text-center shadow-sm ${className}`}
     >
-      <span className="flex h-14 w-14 items-center justify-center rounded-full bg-warm-gold/15 text-wine-primary">
+      <span className="flex h-14 w-14 items-center justify-center rounded-full bg-warm-gold/15 text-primary-pink">
         {icon}
       </span>
       <div className="flex flex-col gap-1">
@@ -49,18 +51,19 @@ export default function EmptyState({
           <button
             type="button"
             onClick={action.onClick}
-            className="mt-1 font-arabic text-xs font-semibold text-wine-primary underline-offset-4 hover:underline"
+            className="mt-1 font-arabic text-xs font-semibold text-primary-pink underline-offset-4 hover:underline"
           >
             {action.label}
           </button>
         ) : (
-          <button
+          <m.button
+            {...pressable}
             type="button"
             onClick={action.onClick}
-            className="mt-2 rounded-full bg-wine-primary px-6 py-2.5 font-arabic text-sm font-semibold text-pure-white shadow-md shadow-wine-primary/20"
+            className="mt-2 rounded-full bg-primary-pink px-6 py-2.5 font-arabic text-sm font-semibold text-pure-white shadow-md shadow-primary-pink/20"
           >
             {action.label}
-          </button>
+          </m.button>
         ))}
     </div>
   )

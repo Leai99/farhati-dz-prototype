@@ -7,6 +7,7 @@ import { InboxIcon, ListIcon, StoreIcon, UsersIcon } from '../../components/icon
 import { useProviderData } from '../../context/ProviderDataContext'
 import { activityFeed, type ActivityType } from '../../mock-data/adminActivity'
 import { adminUsers } from '../../mock-data/adminUsers'
+import { AnimatedMain } from '../../components/Motion'
 
 const activityIcon: Record<ActivityType, (props: { className?: string }) => ReactElement> = {
   signup: UsersIcon,
@@ -31,9 +32,9 @@ export default function AdminOverview() {
       <div className="flex flex-1">
         <AdminSidebar />
 
-      <main className="min-w-0 flex-1 px-4 py-6 sm:px-8">
+      <AnimatedMain className="min-w-0 flex-1 px-4 py-6 sm:px-8">
         <header className="text-right">
-          <h1 className="font-arabic text-2xl font-bold text-wine-primary">نظرة عامة</h1>
+          <h1 className="font-arabic text-2xl font-bold text-primary-pink">نظرة عامة</h1>
           <p className="font-arabic text-sm text-charcoal-text/70">ملخص سريع لحالة المنصة</p>
         </header>
 
@@ -70,7 +71,7 @@ export default function AdminOverview() {
             <button
               type="button"
               onClick={() => navigate('/admin/activity')}
-              className="font-arabic text-xs font-semibold text-wine-primary underline-offset-4 hover:underline"
+              className="font-arabic text-xs font-semibold text-primary-pink underline-offset-4 hover:underline"
             >
               عرض الكل
             </button>
@@ -84,7 +85,7 @@ export default function AdminOverview() {
                   key={a.id}
                   className="flex items-center gap-3 rounded-3xl bg-pure-white shadow-sm p-4"
                 >
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-wine-primary/10 text-wine-primary">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary-pink/10 text-primary-pink">
                     <ItemIcon className="h-4 w-4" />
                   </span>
                   <div className="flex flex-1 flex-col gap-0.5">
@@ -96,7 +97,7 @@ export default function AdminOverview() {
             })}
           </div>
         </section>
-      </main>
+      </AnimatedMain>
     </div>
     </div>
   )

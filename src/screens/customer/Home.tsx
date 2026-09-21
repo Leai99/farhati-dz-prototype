@@ -1,7 +1,9 @@
+import { m } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import ServiceCard from '../../components/ServiceCard'
 import { ForwardArrow, HeartIcon, SearchIcon } from '../../components/icons'
+import { liftable, pressable } from '../../lib/motion'
 import { categoryImage } from '../../lib/serviceDisplay'
 import { categories, services } from '../../mock-data/services'
 
@@ -24,7 +26,7 @@ export default function Home() {
     <main className="flex min-h-full flex-col gap-6 bg-cream-base px-6 pb-28 pt-8">
       <header className="flex items-start justify-between gap-4">
         <div className="flex flex-col gap-1 text-start">
-          <h1 className="font-arabic text-2xl font-bold text-wine-primary">{t('greeting')}</h1>
+          <h1 className="font-arabic text-2xl font-bold text-primary-pink">{t('greeting')}</h1>
           <p className="font-arabic text-sm text-charcoal-text/70">{t('subtitle')}</p>
         </div>
 
@@ -34,7 +36,7 @@ export default function Home() {
           type="button"
           onClick={() => navigate('/favorites')}
           aria-label={t('favoritesAria')}
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-muted-rose/30 bg-pure-white text-wine-primary"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-muted-rose/30 bg-pure-white text-primary-pink"
         >
           <HeartIcon className="h-5 w-5" />
         </button>
@@ -51,11 +53,12 @@ export default function Home() {
         <span className="font-arabic text-sm text-charcoal-text/50">{t('searchAria')}</span>
       </button>
 
-      {/* Signature Event Card — wine base with a soft gold gradient glow */}
-      <button
+      {/* Signature Event Card — pink base with a soft gold gradient glow */}
+      <m.button
+        {...pressable}
         type="button"
         onClick={() => navigate('/select-event-type')}
-        className="group relative w-full overflow-hidden rounded-3xl bg-wine-primary p-6 text-start shadow-md transition-colors hover:bg-wine-primary/95"
+        className="group relative w-full overflow-hidden rounded-3xl bg-primary-pink p-6 text-start shadow-md transition-colors hover:bg-primary-pink/95"
       >
         <span
           aria-hidden="true"
@@ -73,12 +76,12 @@ export default function Home() {
           <p className="font-arabic text-sm leading-relaxed text-pure-white/80">
             {t('eventCard.body')}
           </p>
-          <span className="mt-1 inline-flex items-center gap-1.5 self-start font-arabic text-sm font-semibold text-warm-gold">
+          <span className="mt-1 inline-flex items-center gap-1.5 self-start font-arabic text-sm font-semibold text-pure-white">
             {t('common:startNow')}
             <ForwardArrow />
           </span>
         </div>
-      </button>
+      </m.button>
 
       {/* Category strip — photo tiles, horizontally scrollable */}
       <section className="flex flex-col gap-3">
@@ -89,7 +92,7 @@ export default function Home() {
           <button
             type="button"
             onClick={() => navigate('/categories')}
-            className="font-arabic text-xs font-semibold text-wine-primary"
+            className="font-arabic text-xs font-semibold text-primary-pink"
           >
             {t('seeAll')}
           </button>
@@ -97,7 +100,8 @@ export default function Home() {
 
         <div className="-mx-1 flex gap-4 overflow-x-auto px-1 pb-1">
           {categories.map((c) => (
-            <button
+            <m.button
+              {...liftable}
               key={c.id}
               type="button"
               onClick={() => navigate('/explore', { state: { categoryId: c.id } })}
@@ -114,7 +118,7 @@ export default function Home() {
               <span className="text-center font-arabic text-[11px] leading-tight text-charcoal-text/70">
                 {t(`mockData:categories.${c.id}.label`)}
               </span>
-            </button>
+            </m.button>
           ))}
         </div>
       </section>
@@ -128,7 +132,7 @@ export default function Home() {
           <button
             type="button"
             onClick={() => navigate('/explore')}
-            className="font-arabic text-xs font-semibold text-wine-primary"
+            className="font-arabic text-xs font-semibold text-primary-pink"
           >
             {t('seeAll')}
           </button>

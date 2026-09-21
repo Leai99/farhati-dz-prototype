@@ -41,12 +41,12 @@ export default function ProviderServiceCard({ service, categoryLabel }: Provider
               جديد
             </span>
           )}
-          <span className="font-arabic text-xs font-semibold text-wine-primary">
+          <span className="font-arabic text-xs font-semibold text-primary-pink">
             {formatPrice(service.priceFrom)}–{formatPrice(service.priceTo)} دج
           </span>
         </div>
       </div>
-      <span className="shrink-0 font-arabic text-xs font-semibold text-wine-primary">تعديل</span>
+      <span className="shrink-0 font-arabic text-xs font-semibold text-primary-pink">تعديل</span>
     </button>
   )
 }

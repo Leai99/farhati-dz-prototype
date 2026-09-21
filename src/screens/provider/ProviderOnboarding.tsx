@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import Button from '../../components/Button'
 import { InboxIcon, ListIcon } from '../../components/icons'
+import { AnimatedMain } from '../../components/Motion'
 
 const highlights = [
   {
@@ -26,11 +27,11 @@ export default function ProviderOnboarding() {
   const navigate = useNavigate()
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between bg-cream-base px-6 py-16 text-center">
+    <AnimatedMain className="flex min-h-screen flex-col items-center justify-between bg-cream-base px-6 py-16 text-center">
       <div aria-hidden="true" />
 
       <div className="flex flex-col items-center gap-6">
-        <h1 className="font-arabic text-2xl font-bold text-wine-primary">
+        <h1 className="font-arabic text-2xl font-bold text-primary-pink">
           مرحبًا بك، مقدّم الخدمة
         </h1>
         <p className="max-w-sm font-arabic text-sm leading-relaxed text-charcoal-text/70">
@@ -43,7 +44,7 @@ export default function ProviderOnboarding() {
               key={h.title}
               className="flex items-start gap-3 rounded-3xl bg-pure-white shadow-sm p-4 text-right"
             >
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-warm-gold/15 text-wine-primary">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-warm-gold/15 text-primary-pink">
                 <h.icon className="h-5 w-5" />
               </span>
               <div className="flex flex-col gap-1">
@@ -62,6 +63,6 @@ export default function ProviderOnboarding() {
           الانتقال إلى لوحة التحكم
         </Button>
       </div>
-    </main>
+    </AnimatedMain>
   )
 }

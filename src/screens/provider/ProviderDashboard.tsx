@@ -6,6 +6,7 @@ import { InboxIcon, ListIcon, StarIcon } from '../../components/icons'
 import { useProviderData } from '../../context/ProviderDataContext'
 import { CURRENT_PROVIDER_ID } from '../../mock-data/session'
 import type { RequestStatus } from '../../mock-data/providerRequests'
+import { AnimatedMain } from '../../components/Motion'
 
 const statusLabel: Record<RequestStatus, string> = {
   pending: 'قيد الانتظار',
@@ -42,9 +43,9 @@ export default function ProviderDashboard() {
     <div className="flex min-h-screen bg-cream-base">
       <ProviderSidebar />
 
-      <main className="min-w-0 flex-1 px-4 py-6 sm:px-8">
+      <AnimatedMain className="min-w-0 flex-1 px-4 py-6 sm:px-8">
         <header className="text-right">
-          <h1 className="font-arabic text-2xl font-bold text-wine-primary">
+          <h1 className="font-arabic text-2xl font-bold text-primary-pink">
             مرحبًا، {provider.name}
           </h1>
           <p className="font-arabic text-sm text-charcoal-text/70">
@@ -79,7 +80,7 @@ export default function ProviderDashboard() {
             <button
               type="button"
               onClick={() => navigate('/provider-app/requests')}
-              className="font-arabic text-xs font-semibold text-wine-primary underline-offset-4 hover:underline"
+              className="font-arabic text-xs font-semibold text-primary-pink underline-offset-4 hover:underline"
             >
               عرض الكل
             </button>
@@ -110,7 +111,7 @@ export default function ProviderDashboard() {
             })}
           </div>
         </section>
-      </main>
+      </AnimatedMain>
     </div>
   )
 }

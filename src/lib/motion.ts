@@ -54,6 +54,20 @@ export const liftable: MotionProps = {
   transition: PRESS_SPRING,
 }
 
+/** Splash logo: quiet first-impression entrance (fade + slight scale-up). */
+export const splashEntrance: MotionProps = {
+  initial: { opacity: 0, scale: 0.9 },
+  animate: { opacity: 1, scale: 1 },
+  transition: { duration: 0.45, ease: EASE_OUT },
+}
+
+/** Splash supporting text: fades in just after the logo settles. */
+export const splashTextFade: MotionProps = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  transition: { duration: 0.35, delay: 0.25, ease: EASE_OUT },
+}
+
 /** Staggered list entrance — parent + child variants. */
 export const listVariants: Variants = {
   hidden: {},

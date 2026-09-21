@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import ActivityChart from '../../components/ActivityChart'
 import Badge from '../../components/Badge'
 import ProviderSidebar from '../../components/ProviderSidebar'
 import StatCard from '../../components/StatCard'
@@ -73,6 +74,8 @@ export default function ProviderDashboard() {
             tone="rose"
           />
         </div>
+
+        <ActivityChart requests={myRequests} services={services} />
 
         <section className="mt-8 flex flex-col gap-3 text-right">
           <div className="flex items-center justify-between">

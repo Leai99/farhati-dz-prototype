@@ -20,8 +20,23 @@
     "cta": "Tap to continue"
   },
   "onboarding": {
-    "title": "Plan your event with confidence",
-    "body": "From idea to celebration, Farhati DZ brings together the best service providers in one place"
+    "steps": {
+      "explore": {
+        "title": "Explore services",
+        "body": "Venues, photography, decor, catering and more. Browse providers and compare them for any occasion you're planning"
+      },
+      "plan": {
+        "title": "Plan your event",
+        "body": "Choose your event type and keep track of every detail in one place, step by step"
+      },
+      "connect": {
+        "title": "Connect directly",
+        "body": "Talk to providers, check prices and ratings, and book with confidence"
+      }
+    },
+    "next": "Next",
+    "skip": "Skip",
+    "stepOf": "Step {{current}} of {{total}}"
   },
   "login": {
     "signInTitle": "Welcome back",
@@ -38,6 +53,15 @@
     "signUpCta": "Create account",
     "toggleToSignUp": "Don't have an account? Create one",
     "toggleToSignIn": "Already have an account? Sign in",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "signInLoading": "Signing in…",
+    "signUpLoading": "Creating your account…",
+    "forgotPassword": {
+      "link": "Forgot password?",
+      "sent": "A reset link has been sent to your email",
+      "emailNeeded": "Enter your email first so we can send you a reset link"
+    },
     "errors": {
       "fullNameRequired": "Full name is required",
       "emailRequired": "Email address is required",

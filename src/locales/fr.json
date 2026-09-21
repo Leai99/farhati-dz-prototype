@@ -20,8 +20,23 @@
     "cta": "Appuyez pour continuer"
   },
   "onboarding": {
-    "title": "Organisez votre événement en toute confiance",
-    "body": "De l'idée à la célébration, Farhati DZ réunit pour vous les meilleurs prestataires en un seul endroit"
+    "steps": {
+      "explore": {
+        "title": "Explorez les services",
+        "body": "Salles, photographie, décoration, traiteur et plus encore. Parcourez les prestataires et comparez-les pour chaque occasion"
+      },
+      "plan": {
+        "title": "Organisez votre événement",
+        "body": "Choisissez le type d'événement et suivez chaque détail au même endroit, étape par étape"
+      },
+      "connect": {
+        "title": "Contactez directement",
+        "body": "Échangez avec les prestataires, consultez prix et avis, et réservez en toute confiance"
+      }
+    },
+    "next": "Suivant",
+    "skip": "Passer",
+    "stepOf": "Étape {{current}} sur {{total}}"
   },
   "login": {
     "signInTitle": "Bon retour parmi nous",
@@ -38,6 +53,15 @@
     "signUpCta": "Créer le compte",
     "toggleToSignUp": "Vous n'avez pas de compte ? Créez-en un",
     "toggleToSignIn": "Vous avez déjà un compte ? Connectez-vous",
+    "showPassword": "Afficher le mot de passe",
+    "hidePassword": "Masquer le mot de passe",
+    "signInLoading": "Connexion…",
+    "signUpLoading": "Création du compte…",
+    "forgotPassword": {
+      "link": "Mot de passe oublié ?",
+      "sent": "Un lien de réinitialisation a été envoyé à votre e-mail",
+      "emailNeeded": "Saisissez d'abord votre e-mail pour recevoir un lien de réinitialisation"
+    },
     "errors": {
       "fullNameRequired": "Le nom complet est requis",
       "emailRequired": "L'adresse e-mail est requise",

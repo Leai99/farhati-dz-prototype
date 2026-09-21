@@ -1,11 +1,15 @@
-import { useState, type FormEvent } from 'react'
+import { useEffect, useRef, useState, type FormEvent } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import BackButton from '../../components/BackButton'
 import Button from '../../components/Button'
 import TextField from '../../components/TextField'
+import { EyeIcon, EyeOffIcon } from '../../components/icons'
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+/** Mock submit delay — long enough to register as "working", short enough not to drag. */
+const SUBMIT_DELAY_MS = 750
 
 interface FormErrors {
   fullName?: string
@@ -23,10 +27,30 @@ export default function LoginSignUp() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [errors, setErrors] = useState<FormErrors>({})
+  const [showPassword, setShowPassword] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [resetSent, setResetSent] = useState(false)
+  const submitTimer = useRef<ReturnType<typeof setTimeout>>(undefined)
+
+  useEffect(() => () => clearTimeout(submitTimer.current), [])
 
   function switchMode() {
     setIsSignUp((v) => !v)
     setErrors({})
+    setResetSent(false)
+  }
+
+  /** Mock "forgot password": no email is sent. Needs a valid email first,
+   * since a real reset link would have to go somewhere. */
+  function handleForgotPassword() {
+    const trimmed = email.trim()
+    if (!trimmed || !EMAIL_PATTERN.test(trimmed)) {
+      setResetSent(false)
+      setErrors((prev) => ({ ...prev, email: t('forgotPassword.emailNeeded') }))
+      return
+    }
+    setErrors((prev) => ({ ...prev, email: undefined }))
+    setResetSent(true)
   }
 
   function validate(): FormErrors {
@@ -49,11 +73,14 @@ export default function LoginSignUp() {
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault()
+    if (isSubmitting) return
     const nextErrors = validate()
     setErrors(nextErrors)
     if (Object.keys(nextErrors).length > 0) return
-    // No real auth in this prototype — passing validation just advances the flow.
-    navigate('/choose-account-type')
+    // No real auth in this prototype — passing validation just advances the
+    // flow, after a short mock "network" delay so it doesn't feel instant.
+    setIsSubmitting(true)
+    submitTimer.current = setTimeout(() => navigate('/choose-account-type'), SUBMIT_DELAY_MS)
   }
 
   return (
@@ -92,21 +119,60 @@ export default function LoginSignUp() {
           />
           <TextField
             id="password"
-            type="password"
+            type={showPassword ? 'text' : 'password'}
             label={t('passwordLabel')}
             placeholder={t('passwordPlaceholder')}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             error={errors.password}
+            endAdornment={
+              <button
+                type="button"
+                onClick={() => setShowPassword((v) => !v)}
+                aria-label={showPassword ? t('hidePassword') : t('showPassword')}
+                aria-pressed={showPassword}
+                aria-controls="password"
+                className="flex h-9 w-9 items-center justify-center rounded-full text-charcoal-text/50 hover:text-primary-pink"
+              >
+                {showPassword ? <EyeOffIcon /> : <EyeIcon />}
+              </button>
+            }
           />
 
-          <Button type="submit" className="mt-2">
-            {isSignUp ? t('signUpCta') : t('signInCta')}
+          {!isSignUp && (
+            <div className="-mt-2 flex flex-col items-start gap-2">
+              <button
+                type="button"
+                onClick={handleForgotPassword}
+                className="font-arabic text-xs font-semibold text-primary-pink underline-offset-4 hover:underline"
+              >
+                {t('forgotPassword.link')}
+              </button>
+              {resetSent && (
+                <p
+                  role="status"
+                  className="w-full rounded-xl border border-warm-gold/40 bg-warm-gold/10 px-4 py-3 text-start font-arabic text-xs leading-relaxed text-charcoal-text"
+                >
+                  {t('forgotPassword.sent')}
+                </p>
+              )}
+            </div>
+          )}
+
+          <Button type="submit" className="mt-2" loading={isSubmitting}>
+            {isSubmitting
+              ? isSignUp
+                ? t('signUpLoading')
+                : t('signInLoading')
+              : isSignUp
+                ? t('signUpCta')
+                : t('signInCta')}
           </Button>
         </form>
 
         <button
           type="button"
+          disabled={isSubmitting}
           onClick={switchMode}
           className="font-arabic text-sm text-primary-pink underline-offset-4 hover:underline"
         >

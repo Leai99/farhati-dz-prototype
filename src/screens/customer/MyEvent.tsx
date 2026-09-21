@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import BottomNav from '../../components/BottomNav'
 import EmptyState from '../../components/EmptyState'
 import { CalendarIcon } from '../../components/icons'
 import ServiceCard from '../../components/ServiceCard'
@@ -25,7 +24,7 @@ export default function MyEvent() {
   const totalMax = eventServices.reduce((sum, s) => sum + s.priceTo, 0)
 
   return (
-    <main className="min-h-screen bg-cream-base px-6 pb-28 pt-10">
+    <main className="min-h-full bg-cream-base px-6 pb-28 pt-10">
       <h1 className="text-start font-arabic text-2xl font-bold text-wine-primary">
         {t('title')}
       </h1>
@@ -74,7 +73,6 @@ export default function MyEvent() {
         </div>
       )}
 
-      <BottomNav />
     </main>
   )
 }

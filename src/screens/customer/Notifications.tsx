@@ -1,6 +1,5 @@
 import type { ReactElement } from 'react'
 import { useTranslation } from 'react-i18next'
-import BottomNav from '../../components/BottomNav'
 import EmptyState from '../../components/EmptyState'
 import { BellIcon, CalendarIcon, InfoIcon, MessageIcon } from '../../components/icons'
 import { notifications, type AppNotification } from '../../mock-data/notifications'
@@ -17,7 +16,7 @@ export default function Notifications() {
   const { t } = useTranslation(['notifications', 'mockData'])
 
   return (
-    <main className="min-h-screen bg-cream-base px-6 pb-28 pt-10">
+    <main className="min-h-full bg-cream-base px-6 pb-28 pt-10">
       <h1 className="text-start font-arabic text-2xl font-bold text-wine-primary">
         {t('title')}
       </h1>
@@ -65,7 +64,6 @@ export default function Notifications() {
         })}
       </div>
 
-      <BottomNav />
     </main>
   )
 }

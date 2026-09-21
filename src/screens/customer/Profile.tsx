@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import BottomNav from '../../components/BottomNav'
 import { setLanguage, type AppLanguage } from '../../i18n'
 
 // Language option labels are intentionally NOT translated — a language
@@ -24,7 +23,7 @@ export default function Profile() {
   const userTitle = t('mockData:currentUser.title')
 
   return (
-    <main className="min-h-screen bg-cream-base px-6 pb-28 pt-10">
+    <main className="min-h-full bg-cream-base px-6 pb-28 pt-10">
       <div className="flex flex-col items-center gap-3 text-center">
         <span className="flex h-20 w-20 items-center justify-center rounded-full bg-wine-primary font-arabic text-2xl font-semibold text-pure-white">
           {userName.charAt(0)}
@@ -90,7 +89,6 @@ export default function Profile() {
         </button>
       </div>
 
-      <BottomNav />
     </main>
   )
 }

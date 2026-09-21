@@ -1,48 +1,35 @@
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import BottomNav from '../../components/BottomNav'
-import { HeartIcon } from '../../components/icons'
-
-function ForwardArrow() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="h-4 w-4 rtl:rotate-180"
-      aria-hidden="true"
-    >
-      <path d="M9 6l6 6-6 6" />
-    </svg>
-  )
-}
+import ServiceCard from '../../components/ServiceCard'
+import { ForwardArrow, HeartIcon, SearchIcon } from '../../components/icons'
+import { categoryImage } from '../../lib/serviceDisplay'
+import { categories, services } from '../../mock-data/services'
 
 /**
  * Customer App — Screen 5/15 (Section 5.A): Home. Route: "/home"
  *
- * The "Event Card" signature element (Section 4) doubles as the entry point
- * into event creation: since no event exists yet at this point in the flow,
- * the card itself is the "start a new event" CTA rather than a fabricated
- * sample event.
+ * Content-rich landing matching the reference: greeting header, a search
+ * entry point into Explore, the signature "start a new event" card, a
+ * photo category strip, and a featured-services list. BottomNav is provided
+ * by CustomerLayout, so it isn't rendered here.
  */
 export default function Home() {
   const navigate = useNavigate()
-  const { t } = useTranslation(['home', 'common'])
+  const { t } = useTranslation(['home', 'common', 'mockData'])
+
+  // Top-rated services as the "featured" list — no fabricated popularity data.
+  const featured = [...services].sort((a, b) => b.rating - a.rating).slice(0, 3)
 
   return (
-    <main className="flex min-h-screen flex-col gap-8 bg-cream-base px-6 pb-28 pt-10">
+    <main className="flex min-h-full flex-col gap-6 bg-cream-base px-6 pb-28 pt-8">
       <header className="flex items-start justify-between gap-4">
         <div className="flex flex-col gap-1 text-start">
           <h1 className="font-arabic text-2xl font-bold text-wine-primary">{t('greeting')}</h1>
           <p className="font-arabic text-sm text-charcoal-text/70">{t('subtitle')}</p>
         </div>
 
-        {/* Favorites isn't one of the 5 bottom-nav tabs (Section 4 lists
-            only Home/Explore/My Event/Notifications/Profile), so this stays
-            as its only entry point rather than being replaced by the nav. */}
+        {/* Favorites isn't one of the 5 bottom-nav tabs, so this stays as its
+            only entry point. */}
         <button
           type="button"
           onClick={() => navigate('/favorites')}
@@ -53,7 +40,18 @@ export default function Home() {
         </button>
       </header>
 
-      {/* Signature Event Card — wine base with a soft gold gradient glow at the edges */}
+      {/* Search entry point — opens the full Explore search/filter screen */}
+      <button
+        type="button"
+        onClick={() => navigate('/explore')}
+        aria-label={t('searchAria')}
+        className="flex items-center gap-3 rounded-full border border-muted-rose/30 bg-pure-white px-5 py-3.5 text-start shadow-sm"
+      >
+        <SearchIcon className="h-5 w-5 text-charcoal-text/40" />
+        <span className="font-arabic text-sm text-charcoal-text/50">{t('searchAria')}</span>
+      </button>
+
+      {/* Signature Event Card — wine base with a soft gold gradient glow */}
       <button
         type="button"
         onClick={() => navigate('/select-event-type')}
@@ -82,7 +80,70 @@ export default function Home() {
         </div>
       </button>
 
-      <BottomNav />
+      {/* Category strip — photo tiles, horizontally scrollable */}
+      <section className="flex flex-col gap-3">
+        <div className="flex items-center justify-between">
+          <h2 className="font-arabic text-base font-bold text-charcoal-text">
+            {t('categoriesTitle')}
+          </h2>
+          <button
+            type="button"
+            onClick={() => navigate('/categories')}
+            className="font-arabic text-xs font-semibold text-wine-primary"
+          >
+            {t('seeAll')}
+          </button>
+        </div>
+
+        <div className="-mx-1 flex gap-4 overflow-x-auto px-1 pb-1">
+          {categories.map((c) => (
+            <button
+              key={c.id}
+              type="button"
+              onClick={() => navigate('/explore', { state: { categoryId: c.id } })}
+              className="flex w-[76px] shrink-0 flex-col items-center gap-2"
+            >
+              <span className="flex h-16 w-16 overflow-hidden rounded-2xl shadow-sm">
+                <img
+                  src={categoryImage(c.id)}
+                  alt=""
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
+              </span>
+              <span className="text-center font-arabic text-[11px] leading-tight text-charcoal-text/70">
+                {t(`mockData:categories.${c.id}.label`)}
+              </span>
+            </button>
+          ))}
+        </div>
+      </section>
+
+      {/* Featured services */}
+      <section className="flex flex-col gap-3">
+        <div className="flex items-center justify-between">
+          <h2 className="font-arabic text-base font-bold text-charcoal-text">
+            {t('popularTitle')}
+          </h2>
+          <button
+            type="button"
+            onClick={() => navigate('/explore')}
+            className="font-arabic text-xs font-semibold text-wine-primary"
+          >
+            {t('seeAll')}
+          </button>
+        </div>
+
+        <div className="flex flex-col gap-3">
+          {featured.map((s) => (
+            <ServiceCard
+              key={s.id}
+              service={s}
+              categoryLabel={t(`mockData:categories.${s.categoryId}.label`)}
+            />
+          ))}
+        </div>
+      </section>
     </main>
   )
 }

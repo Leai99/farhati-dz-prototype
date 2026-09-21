@@ -1,10 +1,11 @@
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import BackButton from '../../components/BackButton'
+import { StoreIcon, UserIcon } from '../../components/icons'
 
 const accountTypes = [
-  { id: 'customer', key: 'customer', destination: '/home' },
-  { id: 'provider', key: 'provider', destination: '/provider-app/onboarding' },
+  { id: 'customer', key: 'customer', destination: '/home', icon: UserIcon },
+  { id: 'provider', key: 'provider', destination: '/provider-app/onboarding', icon: StoreIcon },
 ] as const
 
 /**
@@ -19,7 +20,7 @@ export default function AccountTypeSelection() {
   const { t } = useTranslation('accountType')
 
   return (
-    <main className="flex min-h-screen flex-col bg-cream-base px-6 py-6">
+    <main className="flex min-h-full flex-col bg-cream-base px-6 py-6">
       <BackButton />
 
       <div className="mx-auto flex w-full max-w-sm flex-1 flex-col justify-center gap-8">
@@ -29,21 +30,29 @@ export default function AccountTypeSelection() {
         </div>
 
         <div className="flex flex-col gap-4">
-          {accountTypes.map((type) => (
-            <button
-              key={type.id}
-              type="button"
-              onClick={() => navigate(type.destination)}
-              className="flex flex-col gap-1 rounded-3xl border border-warm-gold/40 bg-pure-white px-5 py-4 text-start shadow-sm transition-colors hover:border-wine-primary"
-            >
-              <span className="font-arabic text-lg font-semibold text-wine-primary">
-                {t(`${type.key}.title`)}
-              </span>
-              <span className="font-arabic text-sm text-charcoal-text/70">
-                {t(`${type.key}.description`)}
-              </span>
-            </button>
-          ))}
+          {accountTypes.map((type) => {
+            const TypeIcon = type.icon
+            return (
+              <button
+                key={type.id}
+                type="button"
+                onClick={() => navigate(type.destination)}
+                className="flex items-center gap-4 rounded-3xl border border-warm-gold/40 bg-pure-white px-5 py-4 text-start shadow-sm transition-colors hover:border-wine-primary"
+              >
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-warm-gold/15 text-wine-primary">
+                  <TypeIcon className="h-6 w-6" />
+                </span>
+                <span className="flex flex-col gap-1">
+                  <span className="font-arabic text-lg font-semibold text-wine-primary">
+                    {t(`${type.key}.title`)}
+                  </span>
+                  <span className="font-arabic text-sm text-charcoal-text/70">
+                    {t(`${type.key}.description`)}
+                  </span>
+                </span>
+              </button>
+            )
+          })}
         </div>
       </div>
     </main>

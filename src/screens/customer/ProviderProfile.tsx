@@ -17,7 +17,7 @@ export default function ProviderProfile() {
 
   if (!provider) {
     return (
-      <main className="flex min-h-screen flex-col bg-cream-base px-6 py-6">
+      <main className="flex min-h-full flex-col bg-cream-base px-6 py-6">
         {/* Always entered from a Service Details screen, so plain history
             back is correct here. */}
         <BackButton />
@@ -34,7 +34,7 @@ export default function ProviderProfile() {
   const providerServices = services.filter((s) => provider.serviceIds.includes(s.id))
 
   return (
-    <main className="min-h-screen bg-cream-base pb-12">
+    <main className="min-h-full bg-cream-base pb-12">
       <div className="px-4 pt-6">
         <BackButton />
       </div>

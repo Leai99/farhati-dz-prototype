@@ -59,7 +59,11 @@
     "eventCard": {
       "title": "Démarrez votre prochain événement",
       "body": "Choisissez le type de votre événement et planifiez étape par étape"
-    }
+    },
+    "categoriesTitle": "Parcourir par catégorie",
+    "popularTitle": "Services en vedette",
+    "seeAll": "Voir tout",
+    "searchAria": "Rechercher un service ou prestataire"
   },
   "eventType": {
     "title": "Choisissez le type de votre événement",

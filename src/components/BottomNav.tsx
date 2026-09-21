@@ -24,7 +24,7 @@ export default function BottomNav() {
   const { t } = useTranslation('common')
 
   return (
-    <nav className="fixed inset-x-0 bottom-0 z-30 flex items-center justify-around border-t border-muted-rose/20 bg-pure-white px-2 py-2">
+    <nav className="absolute inset-x-0 bottom-0 z-30 flex items-center justify-around border-t border-muted-rose/20 bg-pure-white px-2 py-2">
       {tabs.map(({ path, labelKey, icon: TabIcon }) => {
         const active = location.pathname === path
         const label = t(labelKey)

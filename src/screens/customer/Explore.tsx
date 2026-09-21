@@ -1,7 +1,6 @@
 import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useLocation, useNavigate } from 'react-router-dom'
-import BottomNav from '../../components/BottomNav'
 import EmptyState from '../../components/EmptyState'
 import FiltersPanel, { type FiltersState } from '../../components/FiltersPanel'
 import { FilterIcon, SearchIcon } from '../../components/icons'
@@ -76,7 +75,7 @@ export default function Explore() {
   }
 
   return (
-    <main className="min-h-screen bg-cream-base pb-28">
+    <main className="min-h-full bg-cream-base pb-28">
       <div className="flex items-center gap-3 px-6 pt-8">
         <div className="relative flex-1">
           <span className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-4 text-charcoal-text/40">
@@ -161,7 +160,6 @@ export default function Explore() {
         onApply={setFilters}
       />
 
-      <BottomNav />
     </main>
   )
 }

@@ -10,3 +10,13 @@ export const toneClasses: Record<ServiceTone, string> = {
 export function formatPrice(value: number) {
   return value.toLocaleString('en-US')
 }
+
+/**
+ * Category thumbnail photo (served from public/images/<categoryId>.jpg).
+ * Filenames deliberately mirror the ServiceCategory ids in mock-data/services.
+ * Kept as one source of truth so cards, hero images and category tiles all
+ * resolve the same photo per category.
+ */
+export function categoryImage(categoryId: string) {
+  return `/images/${categoryId}.jpg`
+}

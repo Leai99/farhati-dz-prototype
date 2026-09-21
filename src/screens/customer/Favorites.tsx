@@ -15,7 +15,7 @@ export default function Favorites() {
   const { t } = useTranslation(['favorites', 'mockData'])
 
   return (
-    <main className="min-h-screen bg-cream-base pb-12">
+    <main className="min-h-full bg-cream-base pb-12">
       <div className="px-4 pt-6">
         <BackButton to="/home" />
       </div>

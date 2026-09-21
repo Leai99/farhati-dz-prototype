@@ -59,7 +59,11 @@
     "eventCard": {
       "title": "ابدأ مناسبتك القادمة",
       "body": "اختر نوع مناسبتك وابدأ التخطيط خطوة بخطوة"
-    }
+    },
+    "categoriesTitle": "تصفح حسب الفئة",
+    "popularTitle": "خدمات مميزة",
+    "seeAll": "عرض الكل",
+    "searchAria": "ابحث عن خدمة أو مقدّم خدمة"
   },
   "eventType": {
     "title": "اختر نوع مناسبتك",
@@ -106,7 +110,11 @@
     "save": "احفظ في المفضلة",
     "saved": "محفوظة في المفضلة",
     "viewProvider": "عرض ملف مقدّم الخدمة",
+    "reviewsCount_zero": "{{count}} تقييم",
     "reviewsCount_one": "{{count}} تقييم",
+    "reviewsCount_two": "{{count}} تقييم",
+    "reviewsCount_few": "{{count}} تقييم",
+    "reviewsCount_many": "{{count}} تقييم",
     "reviewsCount_other": "{{count}} تقييم"
   },
   "providerProfile": {
@@ -129,8 +137,12 @@
       "description": "استكشف الخدمات المتاحة وابدأ ببناء مناسبتك خدمة بخدمة",
       "cta": "استكشف الخدمات"
     },
-    "servicesAdded_one": "{{count}} خدمة مضافة",
-    "servicesAdded_other": "{{count}} خدمات مضافة",
+    "servicesAdded_zero": "{{count}} خدمة مضافة",
+    "servicesAdded_one": "خدمة واحدة مضافة",
+    "servicesAdded_two": "خدمتان مضافتان",
+    "servicesAdded_few": "{{count}} خدمات مضافة",
+    "servicesAdded_many": "{{count}} خدمة مضافة",
+    "servicesAdded_other": "{{count}} خدمة مضافة",
     "estimatedBudget": "الميزانية التقديرية"
   },
   "notifications": {

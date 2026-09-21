@@ -82,7 +82,7 @@ export default function EventTypeSelection() {
   const { t } = useTranslation('eventType')
 
   return (
-    <main className="flex min-h-screen flex-col bg-cream-base px-6 py-6">
+    <main className="flex min-h-full flex-col bg-cream-base px-6 py-6">
       <BackButton />
 
       <div className="mx-auto flex w-full max-w-sm flex-1 flex-col gap-8 pt-4">

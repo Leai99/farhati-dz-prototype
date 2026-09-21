@@ -1,4 +1,5 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom'
+import CustomerLayout from './components/CustomerLayout'
 import AccountTypeSelection from './screens/customer/AccountTypeSelection'
 import Categories from './screens/customer/Categories'
 import EventTypeSelection from './screens/customer/EventTypeSelection'
@@ -29,29 +30,36 @@ import AdminUsers from './screens/admin/AdminUsers'
 /**
  * Route structure.
  *
- * Customer App (Section 5.A) — all 15 screens are real.
- * Service Provider App (Section 5.B) — all screens are real, under
+ * Customer App (Section 5.A) — all screens are real, wrapped in
+ * CustomerLayout so they render inside the centered phone frame on
+ * desktop/tablet and fill the viewport on mobile (Section 24).
+ * Service Provider App (Section 5.B) — desktop dashboard, under
  * /provider-app/... (distinct from the customer-facing public profile at
  * /provider/:id).
- * Admin App (Section 5.C) — all 6 screens are real, under /admin/...
+ * Admin App (Section 5.C) — desktop dashboard, under /admin/...
  * No real auth gate — reachable via a small "Admin" link on /login, or
  * directly at /admin (redirects to /admin/overview).
  */
 export const router = createBrowserRouter([
-  { path: '/', element: <SplashScreen /> },
-  { path: '/onboarding', element: <WelcomeOnboarding /> },
-  { path: '/login', element: <LoginSignUp /> },
-  { path: '/choose-account-type', element: <AccountTypeSelection /> },
-  { path: '/home', element: <Home /> },
-  { path: '/select-event-type', element: <EventTypeSelection /> },
-  { path: '/explore', element: <Explore /> },
-  { path: '/categories', element: <Categories /> },
-  { path: '/service/:id', element: <ServiceDetails /> },
-  { path: '/provider/:id', element: <ProviderProfile /> },
-  { path: '/favorites', element: <Favorites /> },
-  { path: '/my-event', element: <MyEvent /> },
-  { path: '/notifications', element: <Notifications /> },
-  { path: '/profile', element: <Profile /> },
+  {
+    element: <CustomerLayout />,
+    children: [
+      { path: '/', element: <SplashScreen /> },
+      { path: '/onboarding', element: <WelcomeOnboarding /> },
+      { path: '/login', element: <LoginSignUp /> },
+      { path: '/choose-account-type', element: <AccountTypeSelection /> },
+      { path: '/home', element: <Home /> },
+      { path: '/select-event-type', element: <EventTypeSelection /> },
+      { path: '/explore', element: <Explore /> },
+      { path: '/categories', element: <Categories /> },
+      { path: '/service/:id', element: <ServiceDetails /> },
+      { path: '/provider/:id', element: <ProviderProfile /> },
+      { path: '/favorites', element: <Favorites /> },
+      { path: '/my-event', element: <MyEvent /> },
+      { path: '/notifications', element: <Notifications /> },
+      { path: '/profile', element: <Profile /> },
+    ],
+  },
 
   { path: '/provider-app/onboarding', element: <ProviderOnboarding /> },
   { path: '/provider-app/dashboard', element: <ProviderDashboard /> },

@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { useFavorites } from '../context/FavoritesContext'
-import { formatPrice, toneClasses } from '../lib/serviceDisplay'
+import { categoryImage, formatPrice, toneClasses } from '../lib/serviceDisplay'
 import type { Service } from '../mock-data/services'
 import { HeartIcon } from './icons'
 import RatingBadge from './RatingBadge'
@@ -37,9 +37,14 @@ export default function ServiceCard({
         className="flex flex-1 items-center gap-4 text-start"
       >
         <span
-          className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl font-arabic text-lg font-semibold text-pure-white ${toneClasses[service.tone]}`}
+          className={`relative flex h-16 w-16 shrink-0 overflow-hidden rounded-2xl ${toneClasses[service.tone]}`}
         >
-          {name.charAt(0)}
+          <img
+            src={categoryImage(service.categoryId)}
+            alt=""
+            loading="lazy"
+            className="h-full w-full object-cover"
+          />
         </span>
         <div className="flex flex-1 flex-col gap-1">
           <span className="font-arabic text-base font-semibold text-charcoal-text">{name}</span>

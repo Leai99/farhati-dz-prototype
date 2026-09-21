@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import BackButton from '../../components/BackButton'
 import { ForwardArrow, HeartIcon, StarIcon } from '../../components/icons'
 import { useFavorites } from '../../context/FavoritesContext'
-import { formatPrice, toneClasses } from '../../lib/serviceDisplay'
+import { categoryImage, formatPrice } from '../../lib/serviceDisplay'
 import { services } from '../../mock-data/services'
 
 /**
@@ -20,7 +20,7 @@ export default function ServiceDetails() {
 
   if (!service) {
     return (
-      <main className="flex min-h-screen flex-col bg-cream-base px-6 py-6">
+      <main className="flex min-h-full flex-col bg-cream-base px-6 py-6">
         <BackButton to="/explore" />
         <div className="flex flex-1 flex-col items-center justify-center gap-2 text-center">
           <p className="font-arabic text-lg font-semibold text-wine-primary">
@@ -39,32 +39,33 @@ export default function ServiceDetails() {
   const saved = isSaved(service.id)
 
   return (
-    <main className="min-h-screen bg-cream-base pb-12">
+    <main className="min-h-full bg-cream-base pb-12">
       <div className="px-4 pt-6">
         {/* Always leads back to Explore, regardless of entry path. */}
         <BackButton to="/explore" />
       </div>
 
       <div className="mx-auto flex w-full max-w-sm flex-col gap-6 px-6 pt-4">
-        <div className="flex items-center gap-4">
-          <span
-            className={`flex h-24 w-24 shrink-0 items-center justify-center rounded-3xl font-arabic text-3xl font-semibold text-pure-white ${toneClasses[service.tone]}`}
-          >
-            {name.charAt(0)}
+        <div className="overflow-hidden rounded-3xl shadow-sm">
+          <img
+            src={categoryImage(service.categoryId)}
+            alt=""
+            className="h-52 w-full object-cover"
+          />
+        </div>
+
+        <div className="flex flex-col gap-1 text-start">
+          <h1 className="font-arabic text-xl font-semibold text-charcoal-text">{name}</h1>
+          <span className="font-arabic text-sm text-charcoal-text/60">
+            {categoryLabel} · {location}
           </span>
-          <div className="flex flex-1 flex-col gap-1 text-start">
-            <h1 className="font-arabic text-xl font-semibold text-charcoal-text">{name}</h1>
-            <span className="font-arabic text-sm text-charcoal-text/60">
-              {categoryLabel} · {location}
+          <span className="mt-1 inline-flex w-fit items-center gap-1 rounded-full bg-warm-gold/15 px-2.5 py-1 font-arabic text-sm font-semibold text-charcoal-text/80">
+            <StarIcon className="h-4 w-4 text-warm-gold" />
+            {service.rating.toFixed(1)}
+            <span className="text-charcoal-text/40">
+              ({t('reviewsCount', { count: service.reviewCount })})
             </span>
-            <span className="inline-flex w-fit items-center gap-1 rounded-full bg-warm-gold/15 px-2.5 py-1 font-arabic text-sm font-semibold text-charcoal-text/80">
-              <StarIcon className="h-4 w-4 text-warm-gold" />
-              {service.rating.toFixed(1)}
-              <span className="text-charcoal-text/40">
-                ({t('reviewsCount', { count: service.reviewCount })})
-              </span>
-            </span>
-          </div>
+          </span>
         </div>
 
         <div className="flex items-center justify-between rounded-3xl bg-pure-white shadow-sm px-5 py-4">

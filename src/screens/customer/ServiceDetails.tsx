@@ -1,9 +1,12 @@
 import { useTranslation } from 'react-i18next'
 import { useNavigate, useParams } from 'react-router-dom'
+import AddToEventButton from '../../components/AddToEventButton'
 import BackButton from '../../components/BackButton'
 import WhatsAppButton from '../../components/WhatsAppButton'
 import { ForwardArrow, HeartIcon, StarIcon } from '../../components/icons'
 import { useFavorites } from '../../context/FavoritesContext'
+import { useReviews } from '../../context/ReviewsContext'
+import ReviewsSection from '../../components/ReviewsSection'
 import { categoryImage, formatPrice } from '../../lib/serviceDisplay'
 import { providers } from '../../mock-data/providers'
 import { services } from '../../mock-data/services'
@@ -16,6 +19,7 @@ export default function ServiceDetails() {
   const { id } = useParams()
   const navigate = useNavigate()
   const { isSaved, toggleFavorite } = useFavorites()
+  const { statsFor } = useReviews()
   const { t } = useTranslation(['serviceDetails', 'mockData', 'common'])
 
   const service = services.find((s) => s.id === id)
@@ -40,6 +44,7 @@ export default function ServiceDetails() {
   const categoryLabel = t(`mockData:categories.${service.categoryId}.label`)
   const saved = isSaved(service.id)
   const provider = providers.find((p) => p.id === service.providerId)
+  const stats = statsFor(service)
 
   return (
     <main className="min-h-full bg-cream-base pb-12">
@@ -64,9 +69,9 @@ export default function ServiceDetails() {
           </span>
           <span className="mt-1 inline-flex w-fit items-center gap-1 rounded-full bg-warm-gold/15 px-2.5 py-1 font-arabic text-sm font-semibold text-charcoal-text/80">
             <StarIcon className="h-4 w-4 text-warm-gold" />
-            {service.rating.toFixed(1)}
+            {stats.rating.toFixed(1)}
             <span className="text-charcoal-text/40">
-              ({t('reviewsCount', { count: service.reviewCount })})
+              ({t('reviewsCount', { count: stats.reviewCount })})
             </span>
           </span>
         </div>
@@ -99,6 +104,8 @@ export default function ServiceDetails() {
           {saved ? t('saved') : t('save')}
         </button>
 
+        <AddToEventButton serviceId={service.id} />
+
         <button
           type="button"
           onClick={() => navigate(`/provider/${service.providerId}`)}
@@ -118,6 +125,10 @@ export default function ServiceDetails() {
             className="-mt-3"
           />
         )}
+
+        {/* Reviews sit below the actions (save / provider / WhatsApp) so a
+            long review list doesn't push them out of reach. */}
+        <ReviewsSection service={service} />
       </div>
     </main>
   )

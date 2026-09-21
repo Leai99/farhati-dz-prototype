@@ -58,6 +58,41 @@ export function CloseIcon({ className = 'h-5 w-5' }: IconProps) {
   )
 }
 
+export function CheckCircleIcon({ className = 'h-4 w-4' }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.75}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="9" />
+      <path d="m8.5 12.3 2.4 2.4 4.6-5" />
+    </svg>
+  )
+}
+
+export function CheckIcon({ className = 'h-3 w-3' }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={3}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="m5.5 12.5 4 4 9-9.5" />
+    </svg>
+  )
+}
+
 export function EyeIcon({ className = 'h-5 w-5' }: IconProps) {
   return (
     <svg

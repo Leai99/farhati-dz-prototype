@@ -6,12 +6,45 @@
     "admin": "Admin",
     "startNow": "ابدأ الآن",
     "contactWhatsApp": "تواصل عبر واتساب",
+    "verified": "موثّق",
+    "time": {
+      "justNow": "الآن",
+      "today": "اليوم",
+      "daysAgo_zero": "اليوم",
+      "daysAgo_one": "منذ يوم",
+      "daysAgo_two": "منذ يومين",
+      "daysAgo_few": "منذ {{count}} أيام",
+      "daysAgo_many": "منذ {{count}} يومًا",
+      "daysAgo_other": "منذ {{count}} يوم",
+      "weeksAgo_zero": "هذا الأسبوع",
+      "weeksAgo_one": "منذ أسبوع",
+      "weeksAgo_two": "منذ أسبوعين",
+      "weeksAgo_few": "منذ {{count}} أسابيع",
+      "weeksAgo_many": "منذ {{count}} أسبوعًا",
+      "weeksAgo_other": "منذ {{count}} أسبوع",
+      "monthsAgo_zero": "هذا الشهر",
+      "monthsAgo_one": "منذ شهر",
+      "monthsAgo_two": "منذ شهرين",
+      "monthsAgo_few": "منذ {{count}} أشهر",
+      "monthsAgo_many": "منذ {{count}} شهرًا",
+      "monthsAgo_other": "منذ {{count}} شهر"
+    },
+    "countdown": {
+      "today": "اليوم",
+      "past": "انتهت",
+      "inDays_zero": "اليوم",
+      "inDays_one": "غدًا",
+      "inDays_two": "بعد يومين",
+      "inDays_few": "بعد {{count}} أيام",
+      "inDays_many": "بعد {{count}} يومًا",
+      "inDays_other": "بعد {{count}} يوم"
+    },
     "removeFromFavorites": "إزالة من المفضلة",
     "saveToFavorites": "حفظ في المفضلة",
     "bottomNav": {
       "home": "الرئيسية",
       "explore": "استكشاف",
-      "myEvent": "مناسبتي",
+      "myEvents": "مناسباتي",
       "notifications": "الإشعارات",
       "profile": "حسابي"
     }
@@ -74,8 +107,14 @@
   "accountType": {
     "title": "كيف تريد استخدام فرحتي DZ؟",
     "subtitle": "اختر نوع حسابك للمتابعة",
-    "customer": { "title": "عميل", "description": "أبحث عن خدمات لمناسبتي" },
-    "provider": { "title": "مقدّم خدمة", "description": "أقدّم خدمات للمناسبات" }
+    "customer": {
+      "title": "عميل",
+      "description": "أبحث عن خدمات لمناسبتي"
+    },
+    "provider": {
+      "title": "مقدّم خدمة",
+      "description": "أقدّم خدمات للمناسبات"
+    }
   },
   "home": {
     "greeting": "مرحبًا بك في فرحتي DZ",
@@ -83,7 +122,15 @@
     "favoritesAria": "المفضلة",
     "eventCard": {
       "title": "ابدأ مناسبتك القادمة",
-      "body": "اختر نوع مناسبتك وابدأ التخطيط خطوة بخطوة"
+      "body": "اختر نوع مناسبتك وابدأ التخطيط خطوة بخطوة",
+      "returningTitle": "تابع تنظيم مناسباتك",
+      "returningBody_zero": "لا توجد مناسبات قيد التخطيط",
+      "returningBody_one": "لديك مناسبة واحدة قيد التخطيط",
+      "returningBody_two": "لديك مناسبتان قيد التخطيط",
+      "returningBody_few": "لديك {{count}} مناسبات قيد التخطيط",
+      "returningBody_many": "لديك {{count}} مناسبة قيد التخطيط",
+      "returningBody_other": "لديك {{count}} مناسبة قيد التخطيط",
+      "returningCta": "عرض مناسباتي"
     },
     "categoriesTitle": "تصفح حسب الفئة",
     "popularTitle": "خدمات مميزة",
@@ -136,6 +183,37 @@
     "saved": "محفوظة في المفضلة",
     "viewProvider": "عرض ملف مقدّم الخدمة",
     "whatsappMessage": "مرحبًا، لديّ اهتمام بخدمة «{{service}}» المعروضة على تطبيق فرحتي DZ، وأودّ معرفة المزيد عنها.",
+    "addToEvent": {
+      "button": "إضافة إلى مناسبة",
+      "added": "تمت إضافة الخدمة إلى «{{event}}»",
+      "already": "هذه الخدمة مضافة بالفعل إلى «{{event}}»",
+      "alreadyShort": "مضافة",
+      "viewEvent": "عرض المناسبة",
+      "pickerTitle": "اختر المناسبة",
+      "close": "إغلاق",
+      "newEvent": "+ مناسبة جديدة"
+    },
+    "reviews": {
+      "title": "التقييمات",
+      "add": "أضف تقييمك",
+      "yourRating": "تقييمك",
+      "starOption_zero": "{{count}} من 5",
+      "starOption_one": "نجمة واحدة من 5",
+      "starOption_two": "نجمتان من 5",
+      "starOption_few": "{{count}} نجوم من 5",
+      "starOption_many": "{{count}} نجمة من 5",
+      "starOption_other": "{{count}} نجمة من 5",
+      "commentLabel": "تعليقك",
+      "commentPlaceholder": "شارك تجربتك مع هذه الخدمة",
+      "submit": "نشر التقييم",
+      "cancel": "إلغاء",
+      "success": "تمت إضافة تقييمك، شكرًا لك",
+      "yours": "تقييمك",
+      "errors": {
+        "ratingRequired": "اختر عدد النجوم",
+        "commentRequired": "اكتب تعليقًا قصيرًا عن تجربتك"
+      }
+    },
     "reviewsCount_zero": "{{count}} تقييم",
     "reviewsCount_one": "{{count}} تقييم",
     "reviewsCount_two": "{{count}} تقييم",
@@ -147,6 +225,7 @@
     "notFound": "لم يتم العثور على مقدّم الخدمة",
     "about": "نبذة",
     "otherServices": "خدمات مقدّم الخدمة",
+    "verifiedCaption": "تم التحقق من هوية مقدّم الخدمة",
     "whatsappMessage": "مرحبًا، اطّلعت على صفحتكم «{{provider}}» على تطبيق فرحتي DZ، وأودّ الاستفسار عن خدماتكم."
   },
   "favorites": {
@@ -157,20 +236,54 @@
       "cta": "استكشف الخدمات"
     }
   },
-  "myEvent": {
-    "title": "مناسبتي",
+  "myEvents": {
+    "title": "مناسباتي",
+    "newEvent": "+ مناسبة جديدة",
+    "progressAria": "تقدّم التجهيز",
     "empty": {
-      "title": "لم تُضِف أي خدمة إلى مناسبتك بعد",
-      "description": "استكشف الخدمات المتاحة وابدأ ببناء مناسبتك خدمة بخدمة",
+      "title": "لا توجد مناسبات بعد",
+      "description": "أنشئ مناسبتك الأولى وتابع كل ما تحتاجه لها من مكان واحد"
+    }
+  },
+  "eventForm": {
+    "title": "مناسبة جديدة",
+    "subtitle": "أخبرنا بالأساسيات، وسنقترح عليك ما تحتاجه خطوة بخطوة",
+    "pendingService": "سنضيف «{{service}}» إلى هذه المناسبة فور إنشائها",
+    "nameLabel": "اسم المناسبة",
+    "namePlaceholder": "مثلًا: حفل العائلة",
+    "dateLabel": "تاريخ المناسبة",
+    "typeLabel": "نوع المناسبة",
+    "submit": "إنشاء المناسبة",
+    "errors": {
+      "nameRequired": "اسم المناسبة مطلوب",
+      "dateRequired": "اختر تاريخ المناسبة",
+      "datePast": "اختر تاريخًا من اليوم فصاعدًا",
+      "typeRequired": "اختر نوع المناسبة"
+    }
+  },
+  "eventDetail": {
+    "estimatedBudget": "الميزانية التقديرية",
+    "checklistTitle": "قائمة التجهيز",
+    "checklistDone": "تمت الإضافة",
+    "checklistFind": "ابحث",
+    "servicesTitle": "الخدمات المضافة",
+    "noServices": {
+      "title": "لم تُضِف أي خدمة بعد",
+      "description": "ابدأ بإحدى فئات القائمة أعلاه، أو تصفّح كل الخدمات",
       "cta": "استكشف الخدمات"
     },
-    "servicesAdded_zero": "{{count}} خدمة مضافة",
-    "servicesAdded_one": "خدمة واحدة مضافة",
-    "servicesAdded_two": "خدمتان مضافتان",
-    "servicesAdded_few": "{{count}} خدمات مضافة",
-    "servicesAdded_many": "{{count}} خدمة مضافة",
-    "servicesAdded_other": "{{count}} خدمة مضافة",
-    "estimatedBudget": "الميزانية التقديرية"
+    "removeService": "إزالة من المناسبة",
+    "notFound": {
+      "title": "لم يتم العثور على هذه المناسبة",
+      "description": "ربما تم حذفها من هذا الجهاز",
+      "cta": "العودة إلى مناسباتي"
+    },
+    "delete": {
+      "link": "حذف المناسبة",
+      "confirm": "هل تريد حذف هذه المناسبة؟ ستبقى الخدمات متاحة في التطبيق.",
+      "yes": "حذف",
+      "no": "إلغاء"
+    }
   },
   "notifications": {
     "title": "الإشعارات",
@@ -185,16 +298,35 @@
     "logout": "تسجيل الخروج"
   },
   "mockData": {
-    "currentUser": { "name": "ياسمين بوزيد", "title": "عضوة في فرحتي DZ" },
+    "currentUser": {
+      "name": "ياسمين بوزيد",
+      "title": "عضوة في فرحتي DZ"
+    },
     "categories": {
-      "venues": { "label": "قاعات أفراح ومناسبات" },
-      "photography": { "label": "تصوير فوتوغرافي" },
-      "decor": { "label": "ديكور وتنسيق" },
-      "catering": { "label": "تموين وضيافة" },
-      "music": { "label": "موسيقى وترفيه" },
-      "invitations": { "label": "دعوات وهدايا" },
-      "beauty": { "label": "تجميل وأناقة" },
-      "planning": { "label": "تنظيم فعاليات" }
+      "venues": {
+        "label": "قاعات أفراح ومناسبات"
+      },
+      "photography": {
+        "label": "تصوير فوتوغرافي"
+      },
+      "decor": {
+        "label": "ديكور وتنسيق"
+      },
+      "catering": {
+        "label": "تموين وضيافة"
+      },
+      "music": {
+        "label": "موسيقى وترفيه"
+      },
+      "invitations": {
+        "label": "دعوات وهدايا"
+      },
+      "beauty": {
+        "label": "تجميل وأناقة"
+      },
+      "planning": {
+        "label": "تنظيم فعاليات"
+      }
     },
     "services": {
       "s1": {
@@ -301,12 +433,30 @@
       }
     },
     "notifications": {
-      "n1": { "title": "تم تأكيد حجزك مع \"قاعة الأندلس للحفلات\"", "time": "منذ ساعتين" },
-      "n2": { "title": "رسالة جديدة من \"استوديو لمسة للتصوير\" بخصوص موعد الجلسة", "time": "منذ 5 ساعات" },
-      "n3": { "title": "تذكير: موعد مناسبتك يقترب خلال 10 أيام", "time": "أمس" },
-      "n4": { "title": "تم استلام طلب الحجز الخاص بك، بانتظار رد مقدّم الخدمة", "time": "قبل يومين" },
-      "n5": { "title": "رسالة جديدة من \"النخبة لتنظيم الفعاليات\"", "time": "قبل أسبوع" },
-      "n6": { "title": "تحديث في سياسة الإلغاء والاسترجاع", "time": "قبل أسبوعين" }
+      "n1": {
+        "title": "تم تأكيد حجزك مع \"قاعة الأندلس للحفلات\"",
+        "time": "منذ ساعتين"
+      },
+      "n2": {
+        "title": "رسالة جديدة من \"استوديو لمسة للتصوير\" بخصوص موعد الجلسة",
+        "time": "منذ 5 ساعات"
+      },
+      "n3": {
+        "title": "تذكير: موعد مناسبتك يقترب خلال 10 أيام",
+        "time": "أمس"
+      },
+      "n4": {
+        "title": "تم استلام طلب الحجز الخاص بك، بانتظار رد مقدّم الخدمة",
+        "time": "قبل يومين"
+      },
+      "n5": {
+        "title": "رسالة جديدة من \"النخبة لتنظيم الفعاليات\"",
+        "time": "قبل أسبوع"
+      },
+      "n6": {
+        "title": "تحديث في سياسة الإلغاء والاسترجاع",
+        "time": "قبل أسبوعين"
+      }
     }
   }
 }

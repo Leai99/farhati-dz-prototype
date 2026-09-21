@@ -14,6 +14,13 @@ export interface Provider {
    * the demo override that routes every contact button to one number.
    */
   phone: string
+  /**
+   * "موثّق" trust badge. 5 of 10: the two 4.9 multi-service providers (p2,
+   * p8), the 4.8 invitations boutique (p6), the long-established venue (p1)
+   * and the most-reviewed caterer (p4, 210 reviews). p10 (4.6) is left
+   * unverified on purpose so the badge doesn't just mirror the rating.
+   */
+  verified: boolean
 }
 
 export const providers: Provider[] = [
@@ -25,6 +32,7 @@ export const providers: Provider[] = [
     bio: 'نستقبل مختلف أنواع المناسبات في قاعتنا المجهزة، بخبرة تمتد لأكثر من عشر سنوات في تنظيم الفعاليات بمختلف أحجامها.',
     serviceIds: ['s1'],
     phone: '+213555000001',
+    verified: true,
   },
   {
     id: 'p2',
@@ -34,6 +42,7 @@ export const providers: Provider[] = [
     bio: 'استوديو تصوير احترافي يوثّق مناسباتكم بالصورة والفيديو معًا، بفريق متخصص وأسلوب بصري أنيق يناسب مختلف الأذواق.',
     serviceIds: ['s2', 's12'],
     phone: '+213555000002',
+    verified: true,
   },
   {
     id: 'p3',
@@ -43,6 +52,7 @@ export const providers: Provider[] = [
     bio: 'فريق تصميم داخلي متخصص في تنسيق فضاءات المناسبات، من الإضاءة إلى التنسيقات الزهرية، بلمسات مخصصة لكل عميل.',
     serviceIds: ['s3'],
     phone: '+213555000003',
+    verified: false,
   },
   {
     id: 'p4',
@@ -52,6 +62,7 @@ export const providers: Provider[] = [
     bio: 'مطعم متخصص في تموين المناسبات بقوائم طعام متنوعة تجمع بين الأصالة الجزائرية واللمسة العصرية.',
     serviceIds: ['s4'],
     phone: '+213555000004',
+    verified: true,
   },
   {
     id: 'p5',
@@ -61,6 +72,7 @@ export const providers: Provider[] = [
     bio: 'فرقة موسيقية بخبرة واسعة في إحياء مختلف أنواع المناسبات، بمعدات صوتية احترافية وأسلوب يناسب كل جمهور.',
     serviceIds: ['s5'],
     phone: '+213555000005',
+    verified: false,
   },
   {
     id: 'p6',
@@ -70,6 +82,7 @@ export const providers: Provider[] = [
     bio: 'ورشة تصميم متخصصة في الدعوات المطبوعة والرقمية، بتصاميم قابلة للتخصيص بالكامل تناسب طابع كل مناسبة.',
     serviceIds: ['s6'],
     phone: '+213555000006',
+    verified: true,
   },
   {
     id: 'p7',
@@ -79,6 +92,7 @@ export const providers: Provider[] = [
     bio: 'صالون تجميل متخصص في تحضير المناسبات، بفريق مدرّب على أحدث تقنيات المكياج وتصفيف الشعر.',
     serviceIds: ['s7'],
     phone: '+213555000007',
+    verified: false,
   },
   {
     id: 'p8',
@@ -88,6 +102,7 @@ export const providers: Provider[] = [
     bio: 'شركة تنظيم فعاليات متكاملة تتولى كل تفاصيل مناسبتكم من التخطيط إلى التنفيذ، أو تدير يوم الحدث فقط إن فضّلتم التخطيط بأنفسكم.',
     serviceIds: ['s8', 's11'],
     phone: '+213555000008',
+    verified: true,
   },
   {
     id: 'p9',
@@ -97,6 +112,7 @@ export const providers: Provider[] = [
     bio: 'قاعة مجهزة بأحدث الأنظمة التقنية، مخصصة للمؤتمرات والفعاليات المهنية بمختلف الأحجام.',
     serviceIds: ['s9'],
     phone: '+213555000009',
+    verified: false,
   },
   {
     id: 'p10',
@@ -106,5 +122,6 @@ export const providers: Provider[] = [
     bio: 'استوديو تصوير بأسلوب سينمائي، متخصص في إبراز أجمل تفاصيل المناسبات بجودة عالية.',
     serviceIds: ['s10'],
     phone: '+213555000010',
+    verified: false,
   },
 ]

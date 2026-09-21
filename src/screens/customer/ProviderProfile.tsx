@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import BackButton from '../../components/BackButton'
 import RatingBadge from '../../components/RatingBadge'
 import ServiceCard from '../../components/ServiceCard'
+import VerifiedBadge from '../../components/VerifiedBadge'
 import WhatsAppButton from '../../components/WhatsAppButton'
 import { services } from '../../mock-data/services'
 import { providers } from '../../mock-data/providers'
@@ -46,7 +47,13 @@ export default function ProviderProfile() {
             {name.charAt(0)}
           </span>
           <div className="flex flex-col gap-1">
-            <h1 className="font-arabic text-xl font-semibold text-charcoal-text">{name}</h1>
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              <h1 className="font-arabic text-xl font-semibold text-charcoal-text">{name}</h1>
+              {provider.verified && <VerifiedBadge />}
+            </div>
+            {provider.verified && (
+              <span className="font-arabic text-[11px] text-charcoal-text/50">{t('verifiedCaption')}</span>
+            )}
             <span className="font-arabic text-sm text-charcoal-text/60">{categoryLabel}</span>
             <RatingBadge rating={provider.rating} className="text-sm" />
           </div>

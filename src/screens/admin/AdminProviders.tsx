@@ -5,6 +5,7 @@ import Badge from '../../components/Badge'
 import EmptyState from '../../components/EmptyState'
 import { StoreIcon } from '../../components/icons'
 import RatingBadge from '../../components/RatingBadge'
+import VerifiedBadge from '../../components/VerifiedBadge'
 import { useProviderData } from '../../context/ProviderDataContext'
 import { categories } from '../../mock-data/services'
 import { AnimatedMain } from '../../components/Motion'
@@ -66,7 +67,10 @@ export default function AdminProviders() {
                   </div>
                   <div className="flex shrink-0 flex-col items-end gap-1">
                     <RatingBadge rating={p.rating} />
-                    <Badge tone={active ? 'positive' : 'neutral'}>{active ? 'نشط' : 'غير نشط'}</Badge>
+                    <div className="flex items-center gap-1">
+                      {p.verified && <VerifiedBadge label="موثّق" />}
+                      <Badge tone={active ? 'positive' : 'neutral'}>{active ? 'نشط' : 'غير نشط'}</Badge>
+                    </div>
                   </div>
                 </button>
               )

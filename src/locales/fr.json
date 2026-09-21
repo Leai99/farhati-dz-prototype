@@ -6,12 +6,33 @@
     "admin": "Admin",
     "startNow": "Commencer",
     "contactWhatsApp": "Contacter sur WhatsApp",
+    "verified": "Vérifié",
+    "time": {
+      "justNow": "À l'instant",
+      "today": "Aujourd'hui",
+      "daysAgo_one": "Il y a {{count}} jour",
+      "daysAgo_many": "Il y a {{count}} jours",
+      "daysAgo_other": "Il y a {{count}} jours",
+      "weeksAgo_one": "Il y a {{count}} semaine",
+      "weeksAgo_many": "Il y a {{count}} semaines",
+      "weeksAgo_other": "Il y a {{count}} semaines",
+      "monthsAgo_one": "Il y a {{count}} mois",
+      "monthsAgo_many": "Il y a {{count}} mois",
+      "monthsAgo_other": "Il y a {{count}} mois"
+    },
+    "countdown": {
+      "today": "Aujourd'hui",
+      "past": "Passé",
+      "inDays_one": "Demain",
+      "inDays_many": "Dans {{count}} jours",
+      "inDays_other": "Dans {{count}} jours"
+    },
     "removeFromFavorites": "Retirer des favoris",
     "saveToFavorites": "Ajouter aux favoris",
     "bottomNav": {
       "home": "Accueil",
       "explore": "Explorer",
-      "myEvent": "Mon événement",
+      "myEvents": "Mes événements",
       "notifications": "Notifications",
       "profile": "Profil"
     }
@@ -74,8 +95,14 @@
   "accountType": {
     "title": "Comment souhaitez-vous utiliser Farhati DZ ?",
     "subtitle": "Choisissez votre type de compte pour continuer",
-    "customer": { "title": "Client", "description": "Je cherche des prestataires pour mon événement" },
-    "provider": { "title": "Prestataire de services", "description": "Je propose des services pour événements" }
+    "customer": {
+      "title": "Client",
+      "description": "Je cherche des prestataires pour mon événement"
+    },
+    "provider": {
+      "title": "Prestataire de services",
+      "description": "Je propose des services pour événements"
+    }
   },
   "home": {
     "greeting": "Bienvenue sur Farhati DZ",
@@ -83,7 +110,12 @@
     "favoritesAria": "Favoris",
     "eventCard": {
       "title": "Démarrez votre prochain événement",
-      "body": "Choisissez le type de votre événement et planifiez étape par étape"
+      "body": "Choisissez le type de votre événement et planifiez étape par étape",
+      "returningTitle": "Continuez l'organisation de vos événements",
+      "returningBody_one": "Vous avez 1 événement en préparation",
+      "returningBody_many": "Vous avez {{count}} événements en préparation",
+      "returningBody_other": "Vous avez {{count}} événements en préparation",
+      "returningCta": "Voir mes événements"
     },
     "categoriesTitle": "Parcourir par catégorie",
     "popularTitle": "Services en vedette",
@@ -136,6 +168,34 @@
     "saved": "Ajouté aux favoris",
     "viewProvider": "Voir le profil du prestataire",
     "whatsappMessage": "Bonjour, votre service « {{service}} » présenté sur l'application Farhati DZ m'intéresse et j'aimerais en savoir plus.",
+    "addToEvent": {
+      "button": "Ajouter à un événement",
+      "added": "Service ajouté à « {{event}} »",
+      "already": "Ce service est déjà dans « {{event}} »",
+      "alreadyShort": "Ajouté",
+      "viewEvent": "Voir l'événement",
+      "pickerTitle": "Choisissez un événement",
+      "close": "Fermer",
+      "newEvent": "+ Nouvel événement"
+    },
+    "reviews": {
+      "title": "Avis",
+      "add": "Donner mon avis",
+      "yourRating": "Votre note",
+      "starOption_one": "{{count}} étoile sur 5",
+      "starOption_many": "{{count}} étoiles sur 5",
+      "starOption_other": "{{count}} étoiles sur 5",
+      "commentLabel": "Votre commentaire",
+      "commentPlaceholder": "Partagez votre expérience avec ce service",
+      "submit": "Publier l'avis",
+      "cancel": "Annuler",
+      "success": "Votre avis a été ajouté, merci",
+      "yours": "Votre avis",
+      "errors": {
+        "ratingRequired": "Choisissez une note",
+        "commentRequired": "Écrivez un court commentaire sur votre expérience"
+      }
+    },
     "reviewsCount_one": "{{count}} avis",
     "reviewsCount_other": "{{count}} avis"
   },
@@ -143,6 +203,7 @@
     "notFound": "Ce prestataire est introuvable",
     "about": "À propos",
     "otherServices": "Services de ce prestataire",
+    "verifiedCaption": "L'identité de ce prestataire a été vérifiée",
     "whatsappMessage": "Bonjour, j'ai vu votre page « {{provider}} » sur l'application Farhati DZ et j'aimerais me renseigner sur vos services."
   },
   "favorites": {
@@ -153,16 +214,54 @@
       "cta": "Découvrir les services"
     }
   },
-  "myEvent": {
-    "title": "Mon événement",
+  "myEvents": {
+    "title": "Mes événements",
+    "newEvent": "+ Nouvel événement",
+    "progressAria": "Avancement des préparatifs",
     "empty": {
-      "title": "Vous n'avez encore ajouté aucun service à votre événement",
-      "description": "Découvrez les services disponibles et construisez votre événement, service après service",
-      "cta": "Découvrir les services"
+      "title": "Aucun événement pour l'instant",
+      "description": "Créez votre premier événement et suivez tout ce dont il a besoin au même endroit"
+    }
+  },
+  "eventForm": {
+    "title": "Nouvel événement",
+    "subtitle": "Indiquez l'essentiel, nous vous suggérerons le reste étape par étape",
+    "pendingService": "Nous ajouterons « {{service}} » à cet événement dès sa création",
+    "nameLabel": "Nom de l'événement",
+    "namePlaceholder": "ex. : Fête de famille",
+    "dateLabel": "Date de l'événement",
+    "typeLabel": "Type d'événement",
+    "submit": "Créer l'événement",
+    "errors": {
+      "nameRequired": "Le nom de l'événement est requis",
+      "dateRequired": "Choisissez la date de l'événement",
+      "datePast": "Choisissez aujourd'hui ou une date ultérieure",
+      "typeRequired": "Choisissez un type d'événement"
+    }
+  },
+  "eventDetail": {
+    "estimatedBudget": "Budget estimé",
+    "checklistTitle": "Liste des préparatifs",
+    "checklistDone": "Ajouté",
+    "checklistFind": "Chercher",
+    "servicesTitle": "Services ajoutés",
+    "noServices": {
+      "title": "Vous n'avez encore ajouté aucun service",
+      "description": "Commencez par une catégorie de la liste ci-dessus, ou parcourez tous les services",
+      "cta": "Explorer les services"
     },
-    "servicesAdded_one": "{{count}} service ajouté",
-    "servicesAdded_other": "{{count}} services ajoutés",
-    "estimatedBudget": "Budget estimé"
+    "removeService": "Retirer de l'événement",
+    "notFound": {
+      "title": "Événement introuvable",
+      "description": "Il a peut-être été supprimé sur cet appareil",
+      "cta": "Retour à mes événements"
+    },
+    "delete": {
+      "link": "Supprimer l'événement",
+      "confirm": "Supprimer cet événement ? Les services restent disponibles dans l'application.",
+      "yes": "Supprimer",
+      "no": "Annuler"
+    }
   },
   "notifications": {
     "title": "Notifications",
@@ -177,16 +276,35 @@
     "logout": "Déconnexion"
   },
   "mockData": {
-    "currentUser": { "name": "Yasmine Bouzid", "title": "Membre de Farhati DZ" },
+    "currentUser": {
+      "name": "Yasmine Bouzid",
+      "title": "Membre de Farhati DZ"
+    },
     "categories": {
-      "venues": { "label": "Salles de fêtes et réceptions" },
-      "photography": { "label": "Photographie" },
-      "decor": { "label": "Décoration et agencement" },
-      "catering": { "label": "Traiteur et restauration" },
-      "music": { "label": "Musique et animation" },
-      "invitations": { "label": "Faire-part et cadeaux" },
-      "beauty": { "label": "Beauté et style" },
-      "planning": { "label": "Organisation d'événements" }
+      "venues": {
+        "label": "Salles de fêtes et réceptions"
+      },
+      "photography": {
+        "label": "Photographie"
+      },
+      "decor": {
+        "label": "Décoration et agencement"
+      },
+      "catering": {
+        "label": "Traiteur et restauration"
+      },
+      "music": {
+        "label": "Musique et animation"
+      },
+      "invitations": {
+        "label": "Faire-part et cadeaux"
+      },
+      "beauty": {
+        "label": "Beauté et style"
+      },
+      "planning": {
+        "label": "Organisation d'événements"
+      }
     },
     "services": {
       "s1": {
@@ -293,12 +411,30 @@
       }
     },
     "notifications": {
-      "n1": { "title": "Votre réservation avec « Salle Al-Andalus » a été confirmée", "time": "Il y a 2 heures" },
-      "n2": { "title": "Nouveau message de « Studio Lamsa » au sujet du rendez-vous de la séance", "time": "Il y a 5 heures" },
-      "n3": { "title": "Rappel : votre événement approche dans 10 jours", "time": "Hier" },
-      "n4": { "title": "Votre demande de réservation a été reçue et est en attente de réponse du prestataire", "time": "Il y a 2 jours" },
-      "n5": { "title": "Nouveau message de « Al-Nokhba Organisation d'Événements »", "time": "Il y a une semaine" },
-      "n6": { "title": "Mise à jour de la politique d'annulation et de remboursement", "time": "Il y a deux semaines" }
+      "n1": {
+        "title": "Votre réservation avec « Salle Al-Andalus » a été confirmée",
+        "time": "Il y a 2 heures"
+      },
+      "n2": {
+        "title": "Nouveau message de « Studio Lamsa » au sujet du rendez-vous de la séance",
+        "time": "Il y a 5 heures"
+      },
+      "n3": {
+        "title": "Rappel : votre événement approche dans 10 jours",
+        "time": "Hier"
+      },
+      "n4": {
+        "title": "Votre demande de réservation a été reçue et est en attente de réponse du prestataire",
+        "time": "Il y a 2 jours"
+      },
+      "n5": {
+        "title": "Nouveau message de « Al-Nokhba Organisation d'Événements »",
+        "time": "Il y a une semaine"
+      },
+      "n6": {
+        "title": "Mise à jour de la politique d'annulation et de remboursement",
+        "time": "Il y a deux semaines"
+      }
     }
   }
 }

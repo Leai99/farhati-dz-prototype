@@ -4,6 +4,8 @@ import { domAnimation, LazyMotion, MotionConfig } from 'framer-motion'
 import { RouterProvider } from 'react-router-dom'
 import { FavoritesProvider } from './context/FavoritesContext'
 import { ProviderDataProvider } from './context/ProviderDataContext'
+import { ReviewsProvider } from './context/ReviewsContext'
+import { EventsProvider } from './context/EventsContext'
 import './i18n' // Side-effect import: initializes i18next and sets <html dir/lang> before the first render.
 import './index.css'
 import { router } from './router'
@@ -17,7 +19,11 @@ createRoot(document.getElementById('root')!).render(
       <MotionConfig reducedMotion="user">
         <FavoritesProvider>
           <ProviderDataProvider>
-            <RouterProvider router={router} />
+            <ReviewsProvider>
+              <EventsProvider>
+                <RouterProvider router={router} />
+              </EventsProvider>
+            </ReviewsProvider>
           </ProviderDataProvider>
         </FavoritesProvider>
       </MotionConfig>

@@ -21,7 +21,7 @@ import BrandMark from './BrandMark'
  * only appears on the five primary tab roots.
  */
 
-const TAB_ROUTES = new Set(['/home', '/explore', '/my-event', '/notifications', '/profile'])
+const TAB_ROUTES = new Set(['/home', '/explore', '/my-events', '/notifications', '/profile'])
 
 export default function CustomerLayout() {
   const location = useLocation()

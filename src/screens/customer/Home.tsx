@@ -2,6 +2,7 @@ import { m } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import ServiceCard from '../../components/ServiceCard'
+import { useEvents } from '../../context/EventsContext'
 import { ForwardArrow, HeartIcon, SearchIcon } from '../../components/icons'
 import { liftable, pressable } from '../../lib/motion'
 import { categoryImage } from '../../lib/serviceDisplay'
@@ -18,6 +19,8 @@ import { categories, services } from '../../mock-data/services'
 export default function Home() {
   const navigate = useNavigate()
   const { t } = useTranslation(['home', 'common', 'mockData'])
+  const { events } = useEvents()
+  const hasEvents = events.length > 0
 
   // Top-rated services as the "featured" list — no fabricated popularity data.
   const featured = [...services].sort((a, b) => b.rating - a.rating).slice(0, 3)
@@ -53,11 +56,13 @@ export default function Home() {
         <span className="font-arabic text-sm text-charcoal-text/50">{t('searchAria')}</span>
       </button>
 
-      {/* Signature Event Card — pink base with a soft gold gradient glow */}
+      {/* Signature Event Card — pink base with a soft gold gradient glow.
+          No events yet → "start your next event" → new-event form.
+          1+ events → "continue planning" → My Events list. */}
       <m.button
         {...pressable}
         type="button"
-        onClick={() => navigate('/select-event-type')}
+        onClick={() => navigate(hasEvents ? '/my-events' : '/events/new')}
         className="group relative w-full overflow-hidden rounded-3xl bg-primary-pink p-6 text-start shadow-md transition-colors hover:bg-primary-pink/95"
       >
         <span
@@ -71,13 +76,13 @@ export default function Home() {
 
         <div className="relative flex flex-col gap-3">
           <p className="font-arabic text-lg font-semibold text-pure-white">
-            {t('eventCard.title')}
+            {hasEvents ? t('eventCard.returningTitle') : t('eventCard.title')}
           </p>
           <p className="font-arabic text-sm leading-relaxed text-pure-white/80">
-            {t('eventCard.body')}
+            {hasEvents ? t('eventCard.returningBody', { count: events.length }) : t('eventCard.body')}
           </p>
           <span className="mt-1 inline-flex items-center gap-1.5 self-start font-arabic text-sm font-semibold text-pure-white">
-            {t('common:startNow')}
+            {hasEvents ? t('eventCard.returningCta') : t('common:startNow')}
             <ForwardArrow />
           </span>
         </div>

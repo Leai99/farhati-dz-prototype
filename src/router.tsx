@@ -7,7 +7,9 @@ import Explore from './screens/customer/Explore'
 import Favorites from './screens/customer/Favorites'
 import Home from './screens/customer/Home'
 import LoginSignUp from './screens/customer/LoginSignUp'
-import MyEvent from './screens/customer/MyEvent'
+import EventDetail from './screens/customer/EventDetail'
+import EventForm from './screens/customer/EventForm'
+import MyEvents from './screens/customer/MyEvents'
 import Notifications from './screens/customer/Notifications'
 import Profile from './screens/customer/Profile'
 import ProviderProfile from './screens/customer/ProviderProfile'
@@ -55,7 +57,11 @@ export const router = createBrowserRouter([
       { path: '/service/:id', element: <ServiceDetails /> },
       { path: '/provider/:id', element: <ProviderProfile /> },
       { path: '/favorites', element: <Favorites /> },
-      { path: '/my-event', element: <MyEvent /> },
+      { path: '/my-events', element: <MyEvents /> },
+      // Old single-event route, kept as a redirect for existing links/bookmarks.
+      { path: '/my-event', element: <Navigate to="/my-events" replace /> },
+      { path: '/events/new', element: <EventForm /> },
+      { path: '/event/:id', element: <EventDetail /> },
       { path: '/notifications', element: <Notifications /> },
       { path: '/profile', element: <Profile /> },
     ],

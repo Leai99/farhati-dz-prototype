@@ -1,36 +1,37 @@
 /**
  * FARHATI DZ brand lockup (Section 28).
  *
- * A stylized "F" glyph in the current text color with a small warm-gold
- * accent flourish, plus the two-line "FARHATI / DZ" wordmark. `currentColor`
- * drives the F + FARHATI so the same mark works on the cream splash (wine
- * text) and on the dark aubergine desktop backdrop (cream text).
+ * The brand logo is a raster badge (FD ribbon monogram, "Farhati DZ"
+ * wordmark, Arabic tagline and service icons) on an off-white ground.
+ * - 'stacked' (splash) shows the full badge, which already carries the
+ *   wordmark, so no text is rendered alongside it.
+ * - 'inline' (desktop backdrop header) shows the monogram crop in a round
+ *   badge beside the "FARHATI / DZ" text wordmark, since the full badge is
+ *   illegible at header size. `currentColor` drives the text so it works on
+ *   the dark aubergine backdrop (cream text).
  */
+import logoFull from '../assets/farhati-logo.jpg'
+import logoMonogram from '../assets/farhati-monogram.png'
 
 interface BrandMarkProps {
   /** Sizing/color utility classes applied to the wrapper (text color cascades). */
   className?: string
-  /** 'stacked' = logo above wordmark (splash); 'inline' = logo beside wordmark (backdrop header). */
+  /** 'stacked' = full logo badge (splash); 'inline' = monogram beside wordmark (backdrop header). */
   orientation?: 'stacked' | 'inline'
-  /** Logo glyph size. */
+  /** Logo image size. */
   logoClassName?: string
-  /** FARHATI wordmark size. */
+  /** FARHATI wordmark size (inline only). */
   wordmarkClassName?: string
 }
 
 export function FarhatiLogo({ className = 'h-12 w-12' }: { className?: string }) {
   return (
-    <svg viewBox="0 0 64 64" fill="none" className={className} aria-hidden="true">
-      {/* Stylized F — inherits currentColor */}
-      <path d="M24 13 H46" stroke="currentColor" strokeWidth="5" strokeLinecap="round" />
-      <path d="M24 13 V51" stroke="currentColor" strokeWidth="5" strokeLinecap="round" />
-      <path d="M24 31 H42" stroke="currentColor" strokeWidth="5" strokeLinecap="round" />
-      {/* Warm-gold accent sparkle */}
-      <path
-        d="M50 9 l1.7 4.1 4.1 1.7 -4.1 1.7 -1.7 4.1 -1.7 -4.1 -4.1 -1.7 4.1 -1.7 z"
-        fill="#C9A669"
-      />
-    </svg>
+    <img
+      src={logoMonogram}
+      alt=""
+      aria-hidden="true"
+      className={`rounded-full object-cover shadow-sm ring-1 ring-warm-gold/40 ${className}`}
+    />
   )
 }
 
@@ -40,19 +41,22 @@ export default function BrandMark({
   logoClassName = 'h-14 w-14',
   wordmarkClassName = 'text-3xl',
 }: BrandMarkProps) {
+  if (orientation === 'stacked') {
+    return (
+      <div className={`flex flex-col items-center ${className}`}>
+        <img
+          src={logoFull}
+          alt="Farhati DZ"
+          className={`rounded-full object-cover shadow-lg ring-1 ring-warm-gold/30 ${logoClassName}`}
+        />
+      </div>
+    )
+  }
+
   return (
-    <div
-      dir="ltr"
-      className={`flex ${
-        orientation === 'stacked' ? 'flex-col items-center gap-3' : 'flex-row items-center gap-3'
-      } ${className}`}
-    >
+    <div dir="ltr" className={`flex flex-row items-center gap-3 ${className}`}>
       <FarhatiLogo className={logoClassName} />
-      <div
-        className={`flex flex-col leading-none ${
-          orientation === 'stacked' ? 'items-center' : 'items-start'
-        }`}
-      >
+      <div className="flex flex-col items-start leading-none">
         <span className={`font-latin font-bold tracking-[0.18em] ${wordmarkClassName}`}>
           FARHATI
         </span>

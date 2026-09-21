@@ -25,12 +25,7 @@ export default function SplashScreen() {
       }}
       className="flex min-h-full cursor-pointer flex-col items-center justify-center gap-4 bg-cream-base px-6 text-center outline-none"
     >
-      <BrandMark
-        orientation="stacked"
-        className="text-wine-primary"
-        logoClassName="h-20 w-20"
-        wordmarkClassName="text-4xl"
-      />
+      <BrandMark orientation="stacked" logoClassName="h-64 w-64" />
       <p className="mt-2 max-w-xs font-arabic text-base leading-relaxed text-charcoal-text/80">
         {t('splash:tagline')}
       </p>

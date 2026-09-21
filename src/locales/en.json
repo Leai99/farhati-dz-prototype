@@ -5,6 +5,7 @@
     "currency": "DA",
     "admin": "Admin",
     "startNow": "Get started",
+    "contactWhatsApp": "Contact on WhatsApp",
     "removeFromFavorites": "Remove from favorites",
     "saveToFavorites": "Save to favorites",
     "bottomNav": {
@@ -31,7 +32,7 @@
       },
       "connect": {
         "title": "Connect directly",
-        "body": "Talk to providers, check prices and ratings, and book with confidence"
+        "body": "Message providers directly on WhatsApp, and check prices and ratings before you decide"
       }
     },
     "next": "Next",
@@ -134,13 +135,15 @@
     "save": "Save to favorites",
     "saved": "Saved to favorites",
     "viewProvider": "View provider profile",
+    "whatsappMessage": "Hello, I'm interested in your service “{{service}}” listed on the Farhati DZ app and would like to know more.",
     "reviewsCount_one": "{{count}} review",
     "reviewsCount_other": "{{count}} reviews"
   },
   "providerProfile": {
     "notFound": "This provider could not be found",
     "about": "About",
-    "otherServices": "Services from this provider"
+    "otherServices": "Services from this provider",
+    "whatsappMessage": "Hello, I found your page “{{provider}}” on the Farhati DZ app and would like to ask about your services."
   },
   "favorites": {
     "title": "Favorites",

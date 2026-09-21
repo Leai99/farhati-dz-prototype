@@ -1,9 +1,11 @@
 import { useTranslation } from 'react-i18next'
 import { useNavigate, useParams } from 'react-router-dom'
 import BackButton from '../../components/BackButton'
+import WhatsAppButton from '../../components/WhatsAppButton'
 import { ForwardArrow, HeartIcon, StarIcon } from '../../components/icons'
 import { useFavorites } from '../../context/FavoritesContext'
 import { categoryImage, formatPrice } from '../../lib/serviceDisplay'
+import { providers } from '../../mock-data/providers'
 import { services } from '../../mock-data/services'
 
 /**
@@ -37,6 +39,7 @@ export default function ServiceDetails() {
   const description = t(`mockData:services.${service.id}.description`)
   const categoryLabel = t(`mockData:categories.${service.categoryId}.label`)
   const saved = isSaved(service.id)
+  const provider = providers.find((p) => p.id === service.providerId)
 
   return (
     <main className="min-h-full bg-cream-base pb-12">
@@ -106,6 +109,15 @@ export default function ServiceDetails() {
           </span>
           <ForwardArrow className="h-4 w-4 text-primary-pink" />
         </button>
+
+        {provider && (
+          <WhatsAppButton
+            phone={provider.phone}
+            message={t('whatsappMessage', { service: name })}
+            label={t('common:contactWhatsApp')}
+            className="-mt-3"
+          />
+        )}
       </div>
     </main>
   )

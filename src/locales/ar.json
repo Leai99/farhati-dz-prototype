@@ -5,6 +5,7 @@
     "currency": "دج",
     "admin": "Admin",
     "startNow": "ابدأ الآن",
+    "contactWhatsApp": "تواصل عبر واتساب",
     "removeFromFavorites": "إزالة من المفضلة",
     "saveToFavorites": "حفظ في المفضلة",
     "bottomNav": {
@@ -31,7 +32,7 @@
       },
       "connect": {
         "title": "تواصل مباشرة",
-        "body": "تحدّث مع مقدّمي الخدمات، اطّلع على الأسعار والتقييمات، واحجز بثقة"
+        "body": "راسل مقدّمي الخدمات مباشرة عبر واتساب، واطّلع على الأسعار والتقييمات قبل أن تقرّر"
       }
     },
     "next": "التالي",
@@ -134,6 +135,7 @@
     "save": "احفظ في المفضلة",
     "saved": "محفوظة في المفضلة",
     "viewProvider": "عرض ملف مقدّم الخدمة",
+    "whatsappMessage": "مرحبًا، لديّ اهتمام بخدمة «{{service}}» المعروضة على تطبيق فرحتي DZ، وأودّ معرفة المزيد عنها.",
     "reviewsCount_zero": "{{count}} تقييم",
     "reviewsCount_one": "{{count}} تقييم",
     "reviewsCount_two": "{{count}} تقييم",
@@ -144,7 +146,8 @@
   "providerProfile": {
     "notFound": "لم يتم العثور على مقدّم الخدمة",
     "about": "نبذة",
-    "otherServices": "خدمات مقدّم الخدمة"
+    "otherServices": "خدمات مقدّم الخدمة",
+    "whatsappMessage": "مرحبًا، اطّلعت على صفحتكم «{{provider}}» على تطبيق فرحتي DZ، وأودّ الاستفسار عن خدماتكم."
   },
   "favorites": {
     "title": "المفضلة",

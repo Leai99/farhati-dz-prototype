@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import BackButton from '../../components/BackButton'
 import RatingBadge from '../../components/RatingBadge'
 import ServiceCard from '../../components/ServiceCard'
+import WhatsAppButton from '../../components/WhatsAppButton'
 import { services } from '../../mock-data/services'
 import { providers } from '../../mock-data/providers'
 
@@ -13,7 +14,7 @@ import { providers } from '../../mock-data/providers'
 export default function ProviderProfile() {
   const { id } = useParams()
   const provider = providers.find((p) => p.id === id)
-  const { t } = useTranslation(['providerProfile', 'mockData'])
+  const { t } = useTranslation(['providerProfile', 'mockData', 'common'])
 
   if (!provider) {
     return (
@@ -50,6 +51,12 @@ export default function ProviderProfile() {
             <RatingBadge rating={provider.rating} className="text-sm" />
           </div>
         </div>
+
+        <WhatsAppButton
+          phone={provider.phone}
+          message={t('whatsappMessage', { provider: name })}
+          label={t('common:contactWhatsApp')}
+        />
 
         <section className="flex flex-col gap-2 text-start">
           <h2 className="font-arabic text-sm font-semibold text-charcoal-text">{t('about')}</h2>

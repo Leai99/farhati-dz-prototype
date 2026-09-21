@@ -5,6 +5,7 @@
     "currency": "DA",
     "admin": "Admin",
     "startNow": "Commencer",
+    "contactWhatsApp": "Contacter sur WhatsApp",
     "removeFromFavorites": "Retirer des favoris",
     "saveToFavorites": "Ajouter aux favoris",
     "bottomNav": {
@@ -31,7 +32,7 @@
       },
       "connect": {
         "title": "Contactez directement",
-        "body": "Échangez avec les prestataires, consultez prix et avis, et réservez en toute confiance"
+        "body": "Écrivez directement aux prestataires sur WhatsApp, et consultez prix et avis avant de décider"
       }
     },
     "next": "Suivant",
@@ -134,13 +135,15 @@
     "save": "Ajouter aux favoris",
     "saved": "Ajouté aux favoris",
     "viewProvider": "Voir le profil du prestataire",
+    "whatsappMessage": "Bonjour, votre service « {{service}} » présenté sur l'application Farhati DZ m'intéresse et j'aimerais en savoir plus.",
     "reviewsCount_one": "{{count}} avis",
     "reviewsCount_other": "{{count}} avis"
   },
   "providerProfile": {
     "notFound": "Ce prestataire est introuvable",
     "about": "À propos",
-    "otherServices": "Services de ce prestataire"
+    "otherServices": "Services de ce prestataire",
+    "whatsappMessage": "Bonjour, j'ai vu votre page « {{provider}} » sur l'application Farhati DZ et j'aimerais me renseigner sur vos services."
   },
   "favorites": {
     "title": "Favoris",
